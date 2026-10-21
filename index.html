@@ -190,7 +190,7 @@ details p,details ul{font-size:14px}
 @page{size:A4; margin:13mm 12mm}
 @media print{
   #side,#top,#burger,#progress{display:none !important}
-  main{margin:0}
+  main{margin:0; padding:0}
   .wrap{max-width:none; padding:0}
   body{font-size:9.6pt; line-height:1.62; background:#fff}
   .hero{padding:0 0 18px}
@@ -238,8 +238,9 @@ details p,details ul{font-size:14px}
     <a href="#l09"><span class="n">09</span>公共产品与公共资源</a>
     <div class="grp">附录</div>
     <a href="#apa"><span class="n">A</span>作业原题与解析</a>
-    <a href="#apb"><span class="n">B</span>公式与图形速查</a>
-    <a href="#chg"><span class="n">C</span>修改日志</a>
+    <a href="#apc"><span class="n">B</span>期中真题（2025 秋）</a>
+    <a href="#apb"><span class="n">C</span>公式与图形速查</a>
+    <a href="#chg"><span class="n">D</span>修改日志</a>
   </nav>
   <div class="foot">
     严格按 9 讲课件标题与顺序整理<br>
@@ -258,15 +259,15 @@ details p,details ul{font-size:14px}
     <span>第 1—9 讲</span>
     <span>按 PPT 标题与编号</span>
     <span>54 张图示</span>
-    <span>附作业 1—4 精讲</span>
+    <span>附作业与期中真题</span>
   </div>
-  <div class="upd">最近更新 2026-10-21　第 5 讲「政府低价供应」图重画　<a href="#chg">修改日志 →</a></div>
+  <div class="upd">最近更新 2026-10-21　新增 2025 期中真题、作业 3 答案　<a href="#chg">修改日志 →</a></div>
 
   <div class="declare">
     <div class="dt">声明</div>
     <dl>
       <dt>参考资料</dt>
-      <dd>2026 年秋季学期《经济学原理》课程课件（第 1—9 讲，共 144 页）；作业 1—4 及作业 1、2 参考答案。</dd>
+      <dd>2026 年秋季学期《经济学原理》课程课件（第 1—9 讲，共 144 页）；作业 1—4 及作业 1—3 参考答案；2025 秋期中试题与答案。</dd>
       <dt>使用范围</dt>
       <dd>本资料仅限北京大学学生复习使用。</dd>
       <dt>AI 使用说明</dt>
@@ -275,6 +276,8 @@ details p,details ul{font-size:14px}
       <dd>本资料未经严格核对，仅供复习参考；如与课件或教师讲授不一致，以后者为准。</dd>
       <dt>作者</dt>
       <dd>公卫 25 本　Cinnabar</dd>
+      <dt>致谢</dt>
+      <dd>2025 秋期中试题与答案、以及参考的上一届课程笔记，均由<b>赛艇先生</b>提供，特此致谢。</dd>
       <dt>反馈</dt>
       <dd>发现错漏、讲得不清楚，或者有想补充的内容，欢迎随时告诉我，我会持续修订；改动都记在<a href="#chg">修改日志</a>里。</dd>
     </dl>
@@ -1326,6 +1329,22 @@ details p,details ul{font-size:14px}
     <div class="term">「潜在」帕累托改进 <span class="en">Potential Pareto Improvement</span></div>
     <p>总体福利最大化：(a₁, b₁) ≥ (a₂, b₂) 比较的是每个人的得失，而 a₁ + b₁ ≥ a₂ + b₂ 比较的是总和。后者允许「赢家的所得足以补偿输家」，即使补偿没有真的发生。</p>
   </div>
+  <div class="callout tip">
+    <span class="lab">四个容易混的帕累托概念</span>
+    <div class="tbl-wrap" style="margin:6px 0">
+    <table>
+      <thead><tr><th style="width:26%">概念</th><th>判定标准</th></tr></thead>
+      <tbody>
+        <tr><td><b>帕累托有效</b></td><td>找不到一种配置，使至少一人更好而无人更差。</td></tr>
+        <tr><td><b>弱帕累托有效</b></td><td>找不到一种配置，使所有人都更好。条件比前者宽松，所以「弱有效」的范围更大。</td></tr>
+        <tr><td><b>帕累托改进</b></td><td>一种改变：不损害任何人，且至少使一人更好。</td></tr>
+        <tr><td><b>潜在帕累托改进</b></td><td>总福利增加，赢家的所得足以补偿输家（补偿未必真的发生）。</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>考试常把「有效」与「改进」互换来设陷阱：<b>有效描述状态，改进描述变化</b>；而「潜在」把判据从「每个人」换成「总和」，这也正是成本—收益分析的伦理基础。</p>
+  </div>
+
   <div class="callout warn">
     <span class="lab">帕累托有效 ≠ 公平</span>
     <p>一个人拿走全部蛋糕也是帕累托有效的（无法在不损害他的前提下改善别人）。帕累托有效可能有很多个，且可能极不公平。效率与公平是两个独立的评价维度。</p>
@@ -1658,6 +1677,11 @@ details p,details ul{font-size:14px}
     <p><b>拉弗曲线</b>：税收收入 = t × Q(t)。税率从 0 上升时收入增加，但税基不断萎缩；超过某一点后，提高税率反而减少税收。</p>
   </div>
 
+  <div class="callout warn">
+    <span class="lab">现实中的无谓损失比图上更大</span>
+    <p>图上只算了「交易量偏离」这一块三角形。现实中还有两类额外损耗：价格上限带来<b>排队、配给、质量下降</b>（房租管制下房东不维修）；价格下限带来<b>企业之间的非价格竞争</b>（最低工资下的岗位挤占、支持价格下的过度生产）。这些成本不落在三角形里，却同样真实，所以实证估计的损失往往大于课本图形。</p>
+  </div>
+
   <h3>市场与政府：「看不见的手」与「看得见的手」</h3>
   <ul>
     <li>市场通过（广义的）价格机制，将稀缺资源配置给对其估值最高的人。</li>
@@ -1872,6 +1896,12 @@ details p,details ul{font-size:14px}
     <li>B 生产 1 斤大米的机会成本是 0.75 斤蔬菜（1 斤蔬菜的机会成本是 1.33 斤大米）。</li>
     <li>生产效率较低的 A 在蔬菜生产上具有比较优势，B 仅在大米生产上具有比较优势。分工和交易仍然对双方都有好处。</li>
   </ul>
+
+  <div class="callout insight">
+    <span class="lab">2×2 模型的一个推论</span>
+    <p>只要两人生产两种产品的机会成本<b>不完全相同</b>，分工就一定有空间：不可能两人在两种产品上同时具有比较优势，至多各占一种——<b>每人至少在一个产品上有比较优势</b>。这就是「交易的基础是比较优势」的严格版本。</p>
+    <p>反过来，若两人机会成本处处相等，合并后的 PPC 退化为一条直线，没有折点，分工也就没有额外收益。此外，<b>有绝对优势的一方通常不会完全专业化</b>，这正是「不完全分工」的由来。</p>
+  </div>
 
   <h3>分工和交易（第二个例子）</h3>
   <div class="tbl-wrap">
@@ -2992,8 +3022,8 @@ details p,details ul{font-size:14px}
       <p class="opt">A) 0.7　　B) 1　　C) 2　　D) 2.5</p>
     </div>
     <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
-      <p><span class="atag">答案 B</span>两种产品互为倒数：1A = 1B ⇒ 1B = 1A。斜率绝对值的倒数就是反方向的机会成本。</p>
-      <p>只有当 A 与 B 的机会成本之比为 1:1 时，两个方向的答案才相同；若上题答案不是 1，这里就要取倒数。</p>
+      <p><span class="atag">答案 C</span>增加 B 要从 (6, 4) 沿<b>左侧那一段</b>走向 (0, 7)：ΔB/ΔA = (7 − 4)/(0 − 6) = −0.5，即每增加 1 单位 B 要放弃 <b>2</b> 单位 A。</p>
+      <p>关键：这条 PPC 是折线，<b>两段斜率不同</b>。第 1 题往右走（右侧线段，斜率 −1），本题往左走（左侧线段，斜率 −1/2），所以不能简单取倒数。只有在同一条直线段上，两个方向的机会成本才互为倒数。</p>
     </div></details>
   </div>
 
@@ -3017,7 +3047,9 @@ details p,details ul{font-size:14px}
       </table>
       </div>
       <p>X 生产 A 的机会成本更低（1 &lt; 2），所以 X 在 A 上有<b>比较优势</b>，A 正确；Y 在 B 上有比较优势，B 错误。</p>
-      <p>绝对优势看单位时间产量：X 在两种产品上都高于 Y（10 &gt; 4、10 &gt; 8），所以 X 在 A、B 上都有绝对优势，D 正确；D 成立时 C 自然成立。因此本题选 <b>A、C、D</b>。</p>
+      <p>绝对优势看单位时间产量：X 在两种产品上都高于 Y（10 &gt; 4、10 &gt; 8），所以 X 在 A、B 上都有绝对优势，D 正确。</p>
+      <p><b>关于 C 与官方答案</b>：C「X 在 A 上有绝对优势」按定义同样成立（D 成立就蕴含 C），因此本题应为 <b>A、C、D</b>。官方参考答案只给了 a、d，漏掉了 C——这一点已与老师确认，以 <b>A、C、D</b> 为准。</p>
+      <p>顺带记住这个结构：绝对优势是「逐个产品比产量」，比较优势是「比机会成本」。D 说的是「两种产品都有绝对优势」，它天然包含 C（「A 上有绝对优势」），所以 C 不可能是错的。</p>
     </div></details>
   </div>
 
@@ -3133,10 +3165,10 @@ details p,details ul{font-size:14px}
       <p class="opt">a) 请找出市场均衡的价格和产量。<br>b) 请找出社会最优的价格和产量。</p>
     </div>
     <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
-      <p><span class="atag">答案 a) P = √2 ≈ 1.414，Q = 2<sup>1/4</sup> ≈ 1.189；b) P = 1，Q = 1</span>先反解两条曲线：供给 P = Q²，需求 P = 2/Q²。</p>
+      <p><span class="atag">答案 a) P = √2 ≈ 1.414，Q = 2<sup>1/4</sup> ≈ 1.189；b) P = 2，Q = 1</span>先反解两条曲线：供给 P = Q²，需求 P = 2/Q²。</p>
       <p><b>a)</b> 令 √P = √2/√P ⇒ P = √2，代回得 Q = 2<sup>1/4</sup> ≈ 1.189。</p>
       <p><b>b)</b> 社会边际成本 = 私人边际成本 + 1 = Q² + 1。令</p>
-      <div class="formula" style="margin:6px 0">2/Q² = Q² + 1 ⇒ Q⁴ + Q² − 2 = 0 ⇒ Q² = 1 ⇒ <b>Q = 1，P = 1</b></div>
+      <div class="formula" style="margin:6px 0">2/Q² = Q² + 1 ⇒ Q⁴ + Q² − 2 = 0 ⇒ Q² = 1 ⇒ <b>Q = 1，P = 2</b></div>
       <p>验证：Q = 1 时需求价格为 2，社会边际成本 1 + 1 = 2，正好相等。市场产量 1.189 &gt; 社会最优 1，负外部性导致过度生产；差额的福利损失即两块曲线之间从 Q = 1 到 1.189 的面积。</p>
     </div></details>
   </div>
@@ -3161,9 +3193,323 @@ details p,details ul{font-size:14px}
 </section>
 
 
-<section id="apb">
+<section id="apc">
   <div class="sec-head">
     <div class="num">B</div>
+    <div>
+      <h2>2025 秋期中真题</h2>
+      <div class="kicker">附录 · 2025-10-16 · 15 选择 + 7 计算</div>
+    </div>
+  </div>
+
+  <p>这是上一学年（2025 秋）第一次期中考试的完整试题与答案，考点范围与本学期期中一致。题干照录原卷，答案与解析按官方参考答案整理，点击每题下方展开。</p>
+
+  <div class="callout warn">
+    <span class="lab">题型说明</span>
+    <p>2025 卷：<b>15 道选择</b>（每题 1 或 2 个正确选项，全对得 2 分，否则 0 分，共 30 分）+ <b>7 道解释与计算题</b>（每题 10 分，共 70 分）。据任课教师说明，2026 期中调整为 15 道不定项 + 15 道单选 + 若干大题，<b>题型变了，考点与难度没变</b>——选择题的辨析方式、计算题的设问角度都可以直接参考本卷。</p>
+  </div>
+
+  <div class="callout insight">
+    <span class="lab">这份卷子透露的三件事</span>
+    <p><b>① 选择题几乎全是「辨析」</b>：一半以上的错误选项是把方向说反（弹性大小、税负转嫁、比较优势与绝对优势）。<b>② 计算题只考四类</b>：供需联立（含拐点）、弹性与收入、补贴/税的福利分解、外部性的社会最优。<b>③ 第 7 题是作业 4 第 4 题的原型</b>，连数字都接近，务必吃透。</p>
+  </div>
+
+  <h3>一、选择题（每题 1—2 个正确选项，全对 2 分，共 30 分）</h3>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">1</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>关于经济学，以下说法正确的是</p>
+      <p class="opt">a) 经济学是自然科学的一个分支；<br>b) 经济学是社会科学的一个分支；<br>c) 经济学研究「有用的」物品在经济主体之间的配置；<br>d) 经济学主要是建立在个人价值观的基础之上。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 B</span>经济学研究稀缺资源如何在经济主体之间配置，属于社会科学。</p>
+      <p>c 的陷阱在「有用的」：经济学的界定标准是<b>稀缺</b>，不是有用——空气有用但不稀缺，通常不进经济学；d 混淆了实证与规范，个人价值观影响的是政策建议，不是学科基础。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">2</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>关于经济学中的「消费者需求」，以下说法正确的是</p>
+      <p class="opt">a) 消费者需求描述消费者在单位时间内对某商品的购买数量；<br>b) 消费者需求描述消费者愿意为某商品付出的最高价格；<br>c) 消费者需求描述消费者在单位时间内购买的商品数量与该商品价格之间的关系；<br>d) 消费者需求受到企业生产成本的影响。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 C</span>需求是「数量—价格」的<b>关系</b>（函数或曲线），既不是一个数量，也不只是一个价格。</p>
+      <p>b 说的是保留价格，只是需求曲线在某一点的高度；d 是供给侧的因素。这类题的关键词是「关系」二字。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">3</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>商品价格下降带来的「收入效应」指的是</p>
+      <p class="opt">a) 消费者用该商品（部分）替代其他相似的商品，相当于提高自身收入；<br>b) 消费者的收入的购买力上升，从而影响对该商品的购买量；<br>c) 消费者的收入的购买力上升，从而增加对该商品的购买量；<br>d) 消费者的收入的购买力上升，因此选择购买更高端的商品。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 B</span>收入效应只说明「实际购买力上升 → 影响购买量」，<b>方向不定</b>：正常品增加，低档品减少。</p>
+      <p>a 是替代效应；c 把方向写死，对低档品不成立；d 是「升级消费」的通俗说法，不是定义。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">4</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>在某产品市场，可能影响企业供应曲线（或函数）的因素包括</p>
+      <p class="opt">a) 企业生产技术的进步；<br>b) 企业家对市场前景的预期；<br>c) 该产品的市场价格；<br>d) 消费者对该产品的需求。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 A、B</span>供给曲线画的就是「价格—供给量」的关系，价格是<b>自变量</b>，价格变化只是沿曲线移动，不改变曲线本身，所以 c 排除。</p>
+      <p>让曲线移动的是技术、要素价格、预期、企业数量；d 属于需求侧。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">5</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>一个「小」企业生产某个产品，该企业不能影响市场价格，只能随行就市地销售产品。当市场价格为 10 时，该企业愿意向市场提供 100 个单位的产品，那么（在不考虑产量必须是整数的约束时）以下说法正确的是</p>
+      <p class="opt">a) 该企业生产 100 个产品的平均成本等于 10；<br>b) 该企业的产能不超过 100；<br>c) 若该企业已经生产 99（或 100）个产品，这时再额外生产一个产品的额外成本是 10；<br>d) 以上三个说法都不对。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 C</span>（官方答案标注「C / D 二选一」，阅卷时两者皆可）完全竞争企业按 <b>P = MC</b> 决策：愿意供给 100 说明第 100 个单位附近的边际成本约为 10，故 c 成立。</p>
+      <p>a 错在把<b>边际</b>成本当成<b>平均</b>成本；b 错在把「愿意供给量」当成产能上限——价格更高还会多供。</p>
+      <p>d 之所以也被接受：严格说从 100 增到 101 的边际成本会略高于 10（MC 递增），c 只是「约等于」的表述。这道题本身出得不严谨，考场上按 c 答最稳。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">6</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>消费者对某商品的需求函数为 Q(P) = 12 − 2P。当 P = 2 和 P = 4 时，该消费者需求的价格弹性分别是多少？</p>
+      <p class="opt">a) −2，−2　　b) −0.5，−2　　c) −0.5，−1　　d) −2，−1</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 B</span>ε = (dQ/dP)·(P/Q) = −2 · P/Q。</p>
+      <div class="formula" style="margin:6px 0">P = 2：Q = 8，ε = −2×2/8 = −0.5　　P = 4：Q = 4，ε = −2×4/4 = −2</div>
+      <p>线性需求上，价格越高、|ε| 越大——这条性质几乎每年都考。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">7</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>关于消费者对某商品的需求的价格弹性，以下哪些说法是正确的？</p>
+      <p class="opt">a) 价格越高，弹性（的绝对值）越小；<br>b) 消费者对价格变化的反应时间越长，价格弹性（的绝对值）总体上越小；<br>c) 该商品定义的范围越窄（如具体到品牌型号），价格弹性（的绝对值）总体上越小；<br>d) 该商品的替代品越少或替代品的可替代性越低，价格弹性（的绝对值）总体上越小。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 D</span>a、b、c 三条<b>全部说反</b>：线性需求上价格越高 |ε| 越大；时间越长越能调整，弹性越大；定义范围越窄、替代品越具体，弹性越大。</p>
+      <p>d 正确：替代品越少，涨价时越无处可逃，只能继续买。这道题的错误选项是同一套「方向反转」手法，值得背下来。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">8</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>在一个交易量为正的竞争性市场，消费者有下降的需求曲线，企业有上升的供应曲线。我们定义这个市场的社会总福利为消费者剩余、生产者剩余和政府税收收入之和，其中负的税收收入为政府补贴。关于政府对交易收取的商品税或给予的补贴的福利影响，以下哪些说法是基本正确的？</p>
+      <p class="opt">a) 商品税降低社会总福利，补贴增加社会总福利；<br>b) 商品税增加社会总福利，补贴降低社会总福利；<br>c) 商品税和补贴都会增加社会总福利；<br>d) 以上说法都不对。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 D</span>税和补贴都使交易量偏离均衡，<b>都产生无谓损失</b>，所以都降低总福利——a、b、c 无一成立。</p>
+      <p>注意「补贴增加福利」是最常见的直觉错误：补贴让部分人受益，但政府支出超过新增的 CS + PS，差额就是 DWL。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">9</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>假设政府对某商品进行从量补贴，即对每单位售出的商品补贴一定金额。关于该补贴在短期（即供应和需求不变）的福利影响，以下表述正确的是</p>
+      <p class="opt">a) 如果政府是对消费者进行补贴，那么消费者是主要受益者，反之如果政府是对企业进行补贴，那么企业是主要受益者；<br>b) 如果不考虑补贴过程中的各种操作成本，那么无论政府是对消费者或企业进行补贴，消费者都是主要受益者；<br>c) 如果不考虑补贴过程中的各种操作成本，那么无论政府是对消费者或企业进行补贴，产生的福利影响基本相同；<br>d) 如果不考虑补贴过程中的各种操作成本，那么无论政府是对消费者或企业进行补贴，都会增加社会总福利。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 C</span>法定归宿不影响实际归宿：补贴由双方按弹性分享，与「补给谁」无关——和征税完全同构。</p>
+      <p>b 把「消费者受益较多」当成了必然，其实取决于弹性对比；d 错，补贴降低总福利。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">10</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>假设经济中一共只有两个产品，分别记为 a 和 b。地区 X 和地区 Y 在单位时间内的生产可能性曲线分别是 X<sub>a</sub> + 2X<sub>b</sub> = 16，2Y<sub>a</sub> + 3Y<sub>b</sub> = 18。以下哪些论述是正确的？</p>
+      <p class="opt">a) 地区 X 在产品 a 的生产上相对于 Y 有比较优势；<br>b) 地区 X 在产品 a 和 b 的生产上相对于 Y 都有比较优势；<br>c) 地区 Y 在产品 a 的生产上相对于 X 有比较优势；<br>d) 地区 X 在产品 a 和 b 的生产上相对于 Y 都有绝对优势。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 A、D</span>比较优势看机会成本：</p>
+      <div class="formula" style="margin:6px 0">X：a + 2b = 16 ⇒ OC<sub>a</sub> = 0.5 b　　Y：2a + 3b = 18 ⇒ OC<sub>a</sub> = 0.67 b</div>
+      <p>0.5 &lt; 0.67，X 生产 a 的机会成本更低，A 对、C 错。B 在逻辑上不可能——两人不可能在同一产品上同时有比较优势。</p>
+      <p>绝对优势看最大产量：X 为 16a / 8b，Y 为 9a / 6b，X 两种都更多，D 对。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">11</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>假设经济中一共只有两个产品，分别记为 a 和 b，均为消费者的必需品。如果地区 X 在产品 a 的生产上相对于地区 Y 有（严格的）比较优势，那么在两地实行自由贸易且贸易成本足够低的情况下，以下论述正确的是</p>
+      <p class="opt">a) 地区 X 仅生产产品 a，地区 Y 仅生产产品 b，然后通过贸易互通有无；<br>b) 地区 X 仅生产产品 b，地区 Y 仅生产产品 a，然后通过贸易互通有无；<br>c) 地区 X 生产产品 a，地区 Y 生产产品 b，然后 X 用产品 a 换取 Y 生产的 b；<br>d) 当地区 X 的经济规模较大时，地区 X 仅生产产品 a，并通过贸易获得产品 b。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 C</span>比较优势决定的是<b>分工方向</b>：X 多生产 a、Y 多生产 b，然后交换。</p>
+      <p>a、d 都多了「仅」字——完全专业化需要需求足够大，否则会停在不完全分工（见图 6-5）。d 还叠加了「规模大就一定完全专业化」的错误推理；b 把方向说反了。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">12</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>一个「小国」从闭关锁国转向自由贸易，假设所有国际贸易都是各国的企业或消费者自愿参与的。根据基于比较优势的贸易理论，该国开放贸易导致的短期结果包括</p>
+      <p class="opt">a) 该国成为外国廉价产品的倾销地，整体经济受到冲击，本国生活质量整体下降；<br>b) 该国企业将产品输出到国外，导致国内价格整体上升，本国生活质量整体下降；<br>c) 该国国内的产品价格结构发生变化，价格有升有降，对本国社会总福利的影响不确定；<br>d) 该国国内的产品价格结构发生变化，价格有升有降，但本国社会总福利不会下降。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 D</span>出口品价格上升、进口品价格下降，<b>价格结构</b>必然变化；但贸易利得为正，总福利不会下降，所以 c 的「不确定」错。</p>
+      <p>a、b 的共同错误是把「部分人受损」当成「整体受损」——贸易有赢家有输家，但国家整体受益。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">13</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>在一个竞争性的产品市场，一个「小国」的企业面临来自国外同行的竞争。如果本国政府对进口产品加征关税，那么在不考虑关税的长期动态影响时，该关税的福利影响是</p>
+      <p class="opt">a) 对本国整体福利有利，但是对外国企业不利；<br>b) 对本国整体福利不利，对外国企业也不利；<br>c) 对本国企业的好处大于对本国消费者的坏处；<br>d) 对本国企业的好处小于对外国企业的坏处。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 B</span>小国无法影响国际价格，关税只抬高国内价格：消费者损失 &gt; 企业所得 + 关税收入，本国净损失两块 DWL；外国出口企业销量下降，同样受损。</p>
+      <p>c 与 b 直接冲突：若企业好处真的大于消费者坏处，本国福利就该上升。d 比较的是「本国企业」与「外国企业」，不是福利判据。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">14</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>相对于社会最优水平，一个不必为环境污染负责的企业向市场提供产品的价格一般来说较低，这是因为</p>
+      <p class="opt">a) 该企业的生产效率较高；<br>b) 该企业违反国家法律法规；<br>c) 该企业承担的生产成本高于社会承担的生产成本；<br>d) 该企业承担的生产成本低于社会承担的生产成本。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 D</span>企业不必为污染负责，私人成本低于社会成本（差额就是边际外部损害），于是按私人成本定价：价格偏低、产量偏高。</p>
+      <p>c 把方向说反了。本题与作业 4 第 1 题完全相同，属于必得分。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">15</span><span class="qt">选择题</span></div>
+    <div class="qb">
+      <p>各国政府普遍对商业银行进行严格的监管，而不允许银行完全自由地选择经营策略，主要原因是</p>
+      <p class="opt">a) 如果银行因高风险投资造成巨额损失，那么储户可能失去对银行的信心，导致挤兑和连锁反应，从而在银行之外产生巨大损失；<br>b) 银行的盈利能力过强，为了维护社会公平，必须对银行的逐利行为进行约束；<br>c) 银行对贷款企业有很强影响力，如果没有政府监管，那么银行会不公平地对待企业；<br>d) 银行与其他企业没有本质区别，政府监管银行是历史形成的惯例，本身并无必要。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 A</span>银行高杠杆、又是支付体系的核心，破产会通过挤兑与连锁反应溢出到银行体系之外——典型的<b>负外部性</b>：私人风险决策的社会成本远高于私人成本。</p>
+      <p>与作业 4 第 2 题同型。监管的重点因此是资本充足率、流动性与风险敞口，而不是利润率。</p>
+    </div></details>
+  </div>
+
+  <h3>二、解释与计算题（每题 10 分，共 70 分）</h3>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 1</span><span class="qt">供需联立 · 拐点</span></div>
+    <div class="qb">
+      <p>在某产品市场，企业的供应函数为 Q<sup>S</sup> = −60 + 2P，有两个消费者，他们的需求函数分别为 Q<sub>1</sub><sup>D</sup> = 100 − 2P 和 Q<sub>2</sub><sup>D</sup> = 30 − P，其中的价格和产品数量均为非负。请问这个市场的均衡价格和产量分别是多少？</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 P = 40，Q = 20</span><b>第一步，先假设两人都参与</b>：Q<sup>D</sup> = 130 − 3P，令其等于 −60 + 2P，得 P = 38。</p>
+      <p><b>第二步，检验非负约束</b>：P = 38 时 Q<sub>2</sub><sup>D</sup> = 30 − 38 = −8 &lt; 0，消费者 2 已经退出，说明这个均衡不成立。</p>
+      <p><b>第三步，只用消费者 1 重解</b>：100 − 2P = −60 + 2P ⇒ P = 40，Q = 20。此时 Q<sub>2</sub><sup>D</sup> = −10，仍为负，与「只有消费者 1 参与」自洽。</p>
+      <p>要点：市场需求曲线在 P = 30 处<b>折断</b>（消费者 2 的价格上限就是 30），均衡必须落在有效区间内。直接联立而不检验，会得到 P = 38 的错误答案——这正是本题的采分点。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 2</span><span class="qt">弹性与总收入</span></div>
+    <div class="qb">
+      <p>消费者对某产品的需求函数为 Q(P)，假设需求的价格弹性在价格 P<sub>0</sub> 附近为 −3，且在这个价格下消费者愿意购买的数量严格为正。如果市场价格从 P<sub>0</sub> 的基础上降低 1%，那么市场交易总金额（P×Q）会有什么百分比变化？为什么？</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 上升 1.97%（约 2%）</span>由弹性定义：</p>
+      <div class="formula" style="margin:6px 0">ΔQ/Q = ε · ΔP/P = (−3) × (−1%) = +3%</div>
+      <p>总收入变化 = (1 − 1%)(1 + 3%) − 1 = 0.99 × 1.03 − 1 = <b>0.0197</b>，即上升 1.97%；忽略二阶小量得 2%，同样给分。</p>
+      <p>直觉：|ε| &gt; 1 时降价，销量增幅（3%）超过价格降幅（1%），收入增加。这正是「富有弹性时降价增收」的定量版本。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 3</span><span class="qt">补贴的分担</span></div>
+    <div class="qb">
+      <p>在一个竞争性市场，消费者有下降的需求曲线，企业有上升的供应曲线，均衡交易量为 Q* &gt; 0，均衡价格为 P* &gt; 0。假设政府对这个市场的交易每单位补贴（足够小的）s &gt; 0，这时消费者支付的价格下降 a &gt; 0，企业获得的价格上升 b &gt; 0，满足 a/s + b/s = 1。如果在价格 P* 附近时，消费者需求的价格弹性的绝对值大于企业供应的价格弹性，那么 a 和 b 的大小关系是怎样的？为什么？</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 a &lt; b</span>补贴由双方分享，<b>弹性大的一方分得少</b>。消费者对价格更敏感（|ε<sub>d</sub>| &gt; ε<sub>s</sub>），价格只要略降就能多买不少，于是企业可以把大部分补贴留在自己手里。</p>
+      <div class="formula" style="margin:6px 0">a / b = ε<sub>s</sub> / |ε<sub>d</sub>| &lt; 1 ⇒ a &lt; b</div>
+      <p>也可以这样想：给定补贴 s，价格变化的幅度与该侧弹性成反比。需求弹性大，消费者价格只需小幅下降就能消化掉这部分补贴。</p>
+      <p>官方答案只要求「言之有理、条理清晰」，但写出弹性之比是最稳的。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 4</span><span class="qt">补贴的福利分解</span></div>
+    <div class="qb">
+      <p>某产品的市场需求函数为 Q<sup>d</sup> = 210 − 3P，供应函数为 Q<sup>s</sup> = −60 + 6P。政府为每单位交易量对企业补贴 15。</p>
+      <p class="opt">a) 请找出这个市场的均衡价格、消费者剩余、生产者剩余和政府补贴支出；<br>b) 请找出该补贴导致的「无谓损失」。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 a) P = 20，Q = 150；CS = 3750，PS = 1875，补贴 2250　b) DWL = 225</span></p>
+      <p><b>a)</b> 补贴给企业，企业实际得到 P + 15：Q<sup>s</sup> = −60 + 6(P + 15) = 30 + 6P。联立 210 − 3P = 30 + 6P ⇒ P = 20，Q = 150（企业实得 35）。</p>
+      <div class="formula" style="margin:6px 0">CS = ½(70 − 20)×150 = 3750　　PS = ½(35 − 10)×150 = 1875　　补贴 = 15×150 = 2250</div>
+      <p><b>b)</b> 无补贴时 210 − 3P = −60 + 6P ⇒ P = 30，Q = 120，社会总福利 = ½(70 − 10)×120 = 3600。</p>
+      <p>有补贴时 3750 + 1875 − 2250 = 3375，故 <b>DWL = 3600 − 3375 = 225</b>，也等于 ½ × 15 × (150 − 120)。</p>
+      <p>提醒：PS 要用<b>企业实得价 35</b> 算，不是消费者支付的 20；这是本题最容易丢分的地方。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 5</span><span class="qt">机会成本 · 圆形的 PPC</span></div>
+    <div class="qb">
+      <p>某地区仅生产两种产品 A 和 B，该地区的生产可能性曲线为 q<sub>A</sub><sup>2</sup> + q<sub>B</sub><sup>2</sup> = 100，其中 q<sub>A</sub> ≥ 0、q<sub>B</sub> ≥ 0 分别为两种产品的产量。在区间（0，10）范围内，随着产品 A 的产量增加，生产产品 A 的机会成本是上升、不变还是下降？为什么？</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 上升</span>PPC 是四分之一圆，对约束全微分：</p>
+      <div class="formula" style="margin:6px 0">2q<sub>A</sub>dq<sub>A</sub> + 2q<sub>B</sub>dq<sub>B</sub> = 0 ⇒ |dq<sub>B</sub>/dq<sub>A</sub>| = q<sub>A</sub>/q<sub>B</sub></div>
+      <p>A 增加时 q<sub>A</sub> 变大、q<sub>B</sub> 变小，比值 q<sub>A</sub>/q<sub>B</sub> 递增，所以机会成本递增。</p>
+      <p>几何上更直观：圆的切线在 A 接近 10 时趋于垂直，斜率的绝对值趋于无穷——为了多生产一点 A，必须放弃越来越多的 B。官方答案接受「由四分之一圆易得」的几何说明，但写出隐函数求导更稳。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 6</span><span class="qt">三国贸易</span></div>
+    <div class="qb">
+      <p>假设某星球有 A、B、C 三个国家，A 国和 B 国生产某产品，供应函数均为 Q<sup>s</sup> = P，C 国不能生产该产品。三个国家中每个国家对该产品的需求函数为 Q<sup>d</sup> = 5 − P。假设贸易没有额外交易成本。</p>
+      <p class="opt">a) 在自由贸易情况下，各国的消费者剩余和 A、B 国的生产者剩余分别为多少？<br>b) 假设 C 国拒绝从 A 国进口，因此仅从 B 国进口，同时 A 和 B 之间维持自由贸易。请问各国的消费者剩余和 A、B 国的生产者剩余分别为多少？</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 a) P = 3；各国 CS = 2，A、B 的 PS = 4.5　b) 与 a) 完全相同</span></p>
+      <p><b>a)</b> 总供给 2P，总需求 15 − 3P，联立得 P = 3、Q = 6。各国需求量 5 − 3 = 2，CS = ½(5 − 3)×2 = <b>2</b>；A、B 各供 3 单位，PS = ½ × 3 × 3 = <b>4.5</b>。</p>
+      <p><b>b)</b> 关键看价格：若只看 B、C，B 供给 P、B+C 需求 10 − 2P，得 P = 10/3 ≈ 3.33；而 A 单独时 P = 5 − P ⇒ P = 2.5。B 的价格高于 A，A 的企业就有动机把货卖给 B，套利使三国价格重新拉平，最终回到 a) 的均衡。</p>
+      <p>要点：只要商品能自由流动，「C 只从 B 进口」改变的只是<b>贸易路径</b>，不改变最终价格与福利。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">计算 7</span><span class="qt">外部性与社会最优</span></div>
+    <div class="qb">
+      <p>在某产品市场，企业的供应函数为 Q<sup>s</sup> = √P，消费者的需求函数为 Q<sup>d</sup> = √2 / √P。假设企业每单位产出产生的环境污染对社会的损害是 1，但企业不用为环境污染负责。</p>
+      <p class="opt">a) 请找出市场均衡的价格和产量；<br>b) 请找出社会最优的价格和产量。</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 a) P = √2，Q = 2<sup>1/4</sup>　b) P = 2，Q = 1</span></p>
+      <p><b>a)</b> 市场均衡：√P = √2/√P ⇒ P = √2，Q = √P = 2<sup>1/4</sup> ≈ 1.19。</p>
+      <p><b>b)</b> 社会边际成本 = 私人边际成本 + 1。由 Q = √P 得私人 MC = Q²，故社会 MC = Q² + 1，即社会供给 Q = √(P − 1)。</p>
+      <div class="formula" style="margin:6px 0">√(P − 1) = √2 / √P ⇒ P(P − 1) = 2 ⇒ P² − P − 2 = 0 ⇒ P = 2，Q = 1</div>
+      <p>对照：市场产量 1.19 &gt; 社会最优 1，市场价格 1.41 &lt; 2——负外部性下「价低量高」，与图 8-1 完全一致。</p>
+      <p>本题是作业 4 第 4 题的原型，只改了供给函数，解法一模一样，务必练熟。</p>
+    </div></details>
+  </div>
+
+  <div class="callout tip">
+    <span class="lab">从这份卷子看怎么复习</span>
+    <p>选择题的失分几乎都来自「方向记反」：弹性大小的四个影响因素、税负转嫁的方向、比较优势与绝对优势的区别、关税对本国福利的方向。计算题则集中在四套模板：<b>供需联立（含拐点）→ 弹性与收入 → 税/补贴的福利分解 → 外部性的社会最优</b>。把这四类各做三遍，比刷十套偏题有用。</p>
+  </div>
+</section>
+
+
+<section id="apb">
+  <div class="sec-head">
+    <div class="num">C</div>
     <div>
       <h2>公式与图示索引</h2>
       <div class="kicker">附录 · 考前速查</div>
@@ -3280,7 +3626,7 @@ details p,details ul{font-size:14px}
 
 <section id="chg">
   <div class="sec-head">
-    <div class="num">C</div>
+    <div class="num">D</div>
     <div>
       <h2>修改日志</h2>
       <div class="kicker">附录 · 版本记录 · 新的在上</div>
@@ -3291,6 +3637,15 @@ details p,details ul{font-size:14px}
 
   <div class="log">
     <div class="day new">
+      <div class="d">2026-10-21<small>补充真题与答案</small></div>
+      <ul>
+        <li><b>新增附录 B「2025 秋期中真题」。</b>15 道选择 + 7 道计算全部录入，逐题给出答案与解析，并标注与作业题的同型关系。试题与答案由<b>赛艇先生</b>提供。</li>
+        <li><b>作业 3 答案按官方参考答案校正。</b>第 2 题由 B 改为 <b>C</b>（折线左侧段斜率 −1/2，1 单位 B 的机会成本是 2 单位 A）；第 3 题官方答案只给 a、d，但 C 由 D 蕴含，经确认应为 <b>A、C、D</b>。</li>
+        <li><b>按去年的课程笔记补三处。</b>帕累托四个概念的分野（有效 / 弱有效 / 改进 / 潜在改进）；现实中额外产生的无谓损失；2×2 模型「每人至少在一个产品上有比较优势」的推论。</li>
+      </ul>
+    </div>
+
+    <div class="day">
       <div class="d">2026-10-21<small>图示修正</small></div>
       <ul>
         <li><b>第 5 讲 图 5-10「政府低价供应」重画。</b>原图误作价格上限模型（交易量由供给曲线决定）。课件原图是政府定价与需求曲线相交、政府补足私人供给的缺口，因此供应量由需求决定。已按此重绘，并补上 CS、DWL 与财政成本的算例。</li>
@@ -3317,7 +3672,7 @@ details p,details ul{font-size:14px}
 </section>
 
 <footer style="margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:#9a9284">
-  经济学原理 · 课程笔记　|　按 2026 秋 9 讲课件（144 页）与作业 1—4 整理　|　按 <b>Ctrl/Cmd + P</b> 可导出 PDF　|　本资料仅限北京大学学生复习使用　|　最近更新 2026-10-21　|　<a href="#chg" style="color:#9c3d27;text-decoration:none">修改日志</a>
+  经济学原理 · 课程笔记　|　按 2026 秋 9 讲课件（144 页）、作业 1—4 与 2025 期中真题整理　|　按 <b>Ctrl/Cmd + P</b> 可导出 PDF　|　本资料仅限北京大学学生复习使用　|　最近更新 2026-10-21　|　<a href="#chg" style="color:#9c3d27;text-decoration:none">修改日志</a>
 </footer>
 
 </div>
