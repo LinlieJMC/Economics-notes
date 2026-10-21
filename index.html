@@ -156,6 +156,22 @@ details p,details ul{font-size:14px}
 .declare dl{display:grid;grid-template-columns:92px 1fr;gap:5px 12px;margin:0;font-size:12.8px;color:#4b535f;line-height:1.7}
 .declare dt{color:#8a9284}
 .declare dd{margin:0}
+.declare dd a{color:var(--accent); text-decoration:none; border-bottom:1px solid #e3c6bb}
+.declare dd a:hover{border-color:var(--accent)}
+/* 修改日志 */
+.upd{font-size:12.5px; color:#7a7364; margin:9px 0 18px}
+.upd a{color:var(--accent); text-decoration:none; border-bottom:1px solid #e3c6bb; padding-bottom:1px}
+.upd a:hover{border-color:var(--accent)}
+.log{margin:10px 0 4px 8px; border-left:1.5px solid #c9bfa9}
+.log .day{position:relative; padding:0 0 20px 24px}
+.log .day::before{content:""; position:absolute; left:-5px; top:7px; width:9px; height:9px; border-radius:50%;
+  background:#cfc6b6; box-shadow:0 0 0 3px var(--paper)}
+.log .day.new::before{background:var(--accent)}
+.log .d{font-size:12.6px; font-weight:650; color:var(--accent); letter-spacing:.9px; margin-bottom:4px}
+.log .d small{font-weight:400; color:#9a9284; letter-spacing:0; margin-left:9px; font-size:11.5px}
+.log ul{margin:0; padding-left:15px}
+.log li{font-size:13.8px; line-height:1.72; margin:4px 0; color:#3f4753}
+.log li b{color:var(--ink)}
 @media (max-width:1080px){
   #side{transform:translateX(-100%); transition:transform .25s}
   #side.open{transform:none; box-shadow:0 0 40px rgba(0,0,0,.12)}
@@ -192,7 +208,7 @@ details p,details ul{font-size:14px}
   .callout{padding:9px 13px; margin:9px 0; font-size:9.4pt}
   .formula{font-size:13px; padding:8px 12px; margin:8px 0}
   .formula small{font-size:8.6pt}
-  .card,.fig,table,details,.callout{break-inside:avoid}
+  .card,.fig,table,details,.callout,.log .day{break-inside:avoid}
   .fig{margin:8px 0; padding:4px 4px 2px}
   .fig .cap{font-size:8pt}
   .fig svg{max-height:96mm; width:auto; max-width:100%; margin:0 auto}
@@ -223,10 +239,12 @@ details p,details ul{font-size:14px}
     <div class="grp">附录</div>
     <a href="#apa"><span class="n">A</span>作业原题与解析</a>
     <a href="#apb"><span class="n">B</span>公式与图形速查</a>
+    <a href="#chg"><span class="n">C</span>修改日志</a>
   </nav>
   <div class="foot">
     严格按 9 讲课件标题与顺序整理<br>
-    共 144 页 · 54 张图示
+    共 144 页 · 54 张图示<br>
+    最近更新 2026-10-21
   </div>
 </aside>
 
@@ -242,6 +260,7 @@ details p,details ul{font-size:14px}
     <span>54 张图示</span>
     <span>附作业 1—4 精讲</span>
   </div>
+  <div class="upd">最近更新 2026-10-21　第 5 讲「政府低价供应」图重画　<a href="#chg">修改日志 →</a></div>
 
   <div class="declare">
     <div class="dt">声明</div>
@@ -256,6 +275,8 @@ details p,details ul{font-size:14px}
       <dd>本资料未经严格核对，仅供复习参考；如与课件或教师讲授不一致，以后者为准。</dd>
       <dt>作者</dt>
       <dd>公卫 25 本　Cinnabar</dd>
+      <dt>反馈</dt>
+      <dd>发现错漏、讲得不清楚，或者有想补充的内容，欢迎随时告诉我，我会持续修订；改动都记在<a href="#chg">修改日志</a>里。</dd>
     </dl>
   </div>
 </header>
@@ -1322,7 +1343,7 @@ details p,details ul{font-size:14px}
   <h3>消费者剩余（图示）</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="消费者剩余">
 <defs><marker id="aL05_p04" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 355.0,106.0 72.0,106.0" fill="#2b4a7d" fill-opacity="0.13"/>
+<polygon points="72.0,34.0 355.0,106.0 72.0,106.0" fill="#2b4a7d" fill-opacity="0.17"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p04)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p04)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1348,7 +1369,7 @@ details p,details ul{font-size:14px}
   <h3>生产者剩余（图示）</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="生产者剩余">
 <defs><marker id="aL05_p06" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,106.0 355.0,106.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
+<polygon points="72.0,106.0 355.0,106.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p06)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p06)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1366,8 +1387,8 @@ details p,details ul{font-size:14px}
   <h3>市场均衡下的总剩余</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="市场均衡下的总剩余">
 <defs><marker id="aL05_p07" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 355.0,106.0 72.0,106.0" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,106.0 355.0,106.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
+<polygon points="72.0,34.0 355.0,106.0 72.0,106.0" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,106.0 355.0,106.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p07)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p07)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1391,8 +1412,8 @@ details p,details ul{font-size:14px}
   <h3>例：市场均衡下的总剩余</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="总剩余算例">
 <defs><marker id="aL05_p08" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 355.0,106.0 72.0,106.0" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,106.0 355.0,106.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
+<polygon points="72.0,34.0 355.0,106.0 72.0,106.0" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,106.0 355.0,106.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p08)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p08)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1419,9 +1440,9 @@ details p,details ul{font-size:14px}
   <h3>价格下限的福利影响</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="价格下限的福利影响">
 <defs><marker id="aL05_p09" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 204.1,67.6 72.0,67.6" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,67.6 204.1,67.6 204.1,182.8 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
-<polygon points="204.1,67.6 355.0,106.0 204.1,182.8" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="72.0,34.0 204.1,67.6 72.0,67.6" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,67.6 204.1,67.6 204.1,182.8 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
+<polygon points="204.1,67.6 355.0,106.0 204.1,182.8" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p09)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p09)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1444,9 +1465,9 @@ details p,details ul{font-size:14px}
   <h3>价格上限的福利影响</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="价格上限的福利影响">
 <defs><marker id="aL05_p10" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 260.7,82.0 260.7,154.0 72.0,154.0" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,154.0 260.7,154.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
-<polygon points="260.7,82.0 355.0,106.0 260.7,154.0" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="72.0,34.0 260.7,82.0 260.7,154.0 72.0,154.0" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,154.0 260.7,154.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
+<polygon points="260.7,82.0 355.0,106.0 260.7,154.0" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p10)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p10)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1472,10 +1493,10 @@ details p,details ul{font-size:14px}
   <h3>商品税</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="商品税的福利影响">
 <defs><marker id="aL05_p11" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 317.3,96.4 72.0,96.4" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,125.2 317.3,125.2 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
-<polygon points="72.0,125.2 317.3,125.2 317.3,96.4 72.0,96.4" fill="#a8791f" fill-opacity="0.18"/>
-<polygon points="317.3,96.4 355.0,106.0 317.3,125.2" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="72.0,34.0 317.3,96.4 72.0,96.4" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,125.2 317.3,125.2 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
+<polygon points="72.0,125.2 317.3,125.2 317.3,96.4 72.0,96.4" fill="#a8791f" fill-opacity="0.22"/>
+<polygon points="317.3,96.4 355.0,106.0 317.3,125.2" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p11)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p11)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1497,9 +1518,9 @@ details p,details ul{font-size:14px}
   <h3>行政性产能上限</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="行政性产能上限">
 <defs><marker id="aL05_p12" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 260.7,82.0 72.0,82.0" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,82.0 260.7,82.0 260.7,154.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
-<polygon points="260.7,82.0 355.0,106.0 260.7,154.0" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="72.0,34.0 260.7,82.0 72.0,82.0" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,82.0 260.7,82.0 260.7,154.0 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
+<polygon points="260.7,82.0 355.0,106.0 260.7,154.0" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p12)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p12)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1520,10 +1541,10 @@ details p,details ul{font-size:14px}
   <h3>政府补贴</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="政府补贴的福利影响">
 <defs><marker id="aL05_p13" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 392.7,115.6 72.0,115.6" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="72.0,86.8 392.7,86.8 72.0,250.0" fill="#3c6b52" fill-opacity="0.13"/>
-<polygon points="72.0,115.6 392.7,115.6 392.7,86.8 72.0,86.8" fill="#a8791f" fill-opacity="0.18"/>
-<polygon points="355.0,106.0 392.7,115.6 392.7,86.8" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="72.0,34.0 392.7,115.6 72.0,115.6" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="72.0,86.8 392.7,86.8 72.0,250.0" fill="#3c6b52" fill-opacity="0.16"/>
+<polygon points="72.0,115.6 392.7,115.6 392.7,86.8 72.0,86.8" fill="#a8791f" fill-opacity="0.22"/>
+<polygon points="355.0,106.0 392.7,115.6 392.7,86.8" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p13)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p13)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
@@ -1536,34 +1557,57 @@ details p,details ul{font-size:14px}
 <polyline points="72.0,250.0 496.5,34.0" fill="none" stroke="#3c6b52" stroke-width="2"/>
 <text x="468.2" y="67.6" font-size="11.5" fill="#3c6b52" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">S</text>
 <circle cx="355.0" cy="106.0" r="2.8" fill="#5d6673"/>
-<text x="90.9" y="52.2" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">消费者价格</text>
-<text x="90.9" y="75.3" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">生产者价格</text>
-<text x="109.7" y="104.1" font-size="10.5" fill="#a8791f" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">政府补贴支出</text>
-<text x="358.8" y="132.9" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">DWL</text>
-</svg><div class="cap">图 5-9　政府补贴。消费者价格下降、生产者价格上升，产量扩大；政府支出是中间的长方形，右侧三角形是过度生产造成的无谓损失。<span class="src">对应课件第 13 页</span></div></div>
+<polyline points="83.3,68.4 72.0,68.4 72.0,86.8" fill="none" stroke="#9c3d27" stroke-width="0.8" stroke-dasharray="2 2" opacity=".85"/>
+<circle cx="72.0" cy="86.8" r="1.8" fill="#9c3d27"/>
+<text x="83.3" y="71.4" font-size="10" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">生产者价格 22</text>
+<polyline points="83.3,137.6 72.0,137.6 72.0,115.6" fill="none" stroke="#9c3d27" stroke-width="0.8" stroke-dasharray="2 2" opacity=".85"/>
+<circle cx="72.0" cy="115.6" r="1.8" fill="#9c3d27"/>
+<text x="83.3" y="140.6" font-size="10" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">消费者价格 19</text>
+<text x="128.6" y="100.2" font-size="10.5" fill="#a8791f" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">政府补贴支出</text>
+<polyline points="405.9,110.7 379.5,110.7 379.5,109.8" fill="none" stroke="#9c3d27" stroke-width="0.8" stroke-dasharray="2 2" opacity=".85"/>
+<circle cx="379.5" cy="109.8" r="1.8" fill="#9c3d27"/>
+<text x="405.9" y="113.7" font-size="10" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">DWL</text>
+</svg><div class="cap">图 5-9　政府补贴。单位补贴 3 元：消费者价格 19、生产者价格 22，产量从 30 扩到 34；政府支出 3 × 34 = 102（中间长方形），右侧三角形是过度生产造成的无谓损失 ½ × 4 × 3 = 6。<span class="src">对应课件第 13 页</span></div></div>
 
   <h3>政府低价供应</h3>
   <div class="fig"><svg width="680" height="340" viewBox="0 0 680 340" role="img" aria-label="政府低价供应">
 <defs><marker id="aL05_p14" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="72.0,34.0 260.7,82.0 260.7,154.0 72.0,154.0" fill="#2b4a7d" fill-opacity="0.13"/>
-<polygon points="260.7,82.0 355.0,106.0 260.7,154.0" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="72.0,34.0 505.9,144.4 72.0,144.4" fill="#2b4a7d" fill-opacity="0.17"/>
+<polygon points="355.0,106.0 505.9,144.4 505.9,29.2" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="72" y1="298" x2="647" y2="298" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p14)"/>
 <line x1="72" y1="298" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p14)"/>
 <text x="644" y="316" font-size="12" fill="#5d6673" text-anchor="end">交易量</text>
 <text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">价格</text>
-<line x1="72" y1="106.0" x2="638.0" y2="106.0" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="3 3"/>
-<line x1="72" y1="154.0" x2="638.0" y2="154.0" stroke="#9c3d27" stroke-width="1.4" stroke-dasharray="6 3"/>
-<line x1="260.7" y1="298" x2="260.7" y2="34.0" stroke="#9c3d27" stroke-width="1.6" stroke-dasharray="5 3"/>
+<line x1="72" y1="106.0" x2="355.0" y2="106.0" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="3 3"/>
+<line x1="72" y1="144.4" x2="505.9" y2="144.4" stroke="#9c3d27" stroke-width="1.4" stroke-dasharray="6 3"/>
+<line x1="505.9" y1="298" x2="505.9" y2="29.2" stroke="#9c3d27" stroke-width="1.4" stroke-dasharray="6 3"/>
+<line x1="355.0" y1="298" x2="355.0" y2="106.0" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="3 3"/>
 <polyline points="72.0,34.0 638.0,178.0" fill="none" stroke="#2b4a7d" stroke-width="2"/>
 <text x="581.4" y="169.4" font-size="11.5" fill="#2b4a7d" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">D</text>
 <polyline points="72.0,250.0 496.5,34.0" fill="none" stroke="#3c6b52" stroke-width="2"/>
 <text x="468.2" y="67.6" font-size="11.5" fill="#3c6b52" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">S</text>
 <circle cx="355.0" cy="106.0" r="2.8" fill="#5d6673"/>
-<text x="85.2" y="140.6" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">政府定价</text>
-<text x="266.3" y="275.0" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">供应量</text>
-<text x="100.3" y="65.7" font-size="11" fill="#2b4a7d" text-anchor="start" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">CS</text>
-<text x="279.5" y="123.3" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">无谓损失</text>
-</svg><div class="cap">图 5-10　政府低价供应。政府以低于均衡的价格提供有限数量，消费者剩余增加，但由于供给不足，仍有无谓损失，且政府承担财政成本。<span class="src">对应课件第 14 页</span></div></div>
+<circle cx="505.9" cy="144.4" r="2.8" fill="#9c3d27"/>
+<circle cx="279.5" cy="144.4" r="2.6" fill="#3c6b52"/>
+<line x1="279.5" y1="209.7" x2="505.9" y2="209.7" stroke="#a8791f" stroke-width="1.4"/>
+<line x1="279.5" y1="205.7" x2="279.5" y2="213.7" stroke="#a8791f" stroke-width="1"/>
+<line x1="505.9" y1="205.7" x2="505.9" y2="213.7" stroke="#a8791f" stroke-width="1"/>
+<text x="392.7" y="226.7" font-size="11.5" fill="#a8791f" text-anchor="middle">政府补足 24</text>
+<polyline points="83.3,166.4 72.0,166.4 72.0,144.4" fill="none" stroke="#9c3d27" stroke-width="0.8" stroke-dasharray="2 2" opacity=".85"/>
+<circle cx="72.0" cy="144.4" r="1.8" fill="#9c3d27"/>
+<text x="83.3" y="169.4" font-size="10.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">市场价格 16</text>
+<text x="77.7" y="96.4" font-size="9.5" fill="#5d6673" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">原均衡 20</text>
+<text x="156.9" y="71.4" font-size="11.5" fill="#2b4a7d" text-anchor="start" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">消费者剩余</text>
+<text x="394.6" y="100.2" font-size="9.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">无谓损失</text>
+<text x="505.9" y="315.0" font-size="10" fill="#9c3d27" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">供应量 46</text>
+<text x="355.0" y="313.0" font-size="9.5" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">30</text>
+<text x="279.5" y="313.0" font-size="9.5" fill="#3c6b52" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">22</text>
+</svg><div class="cap">图 5-10　政府低价供应。政府把价格定在均衡价格之下（16 &lt; 20），这个价格上需求量是 46 单位，而私人供给只有 22 单位，缺口 24 单位由政府补足——所以<b>供应量由需求曲线决定</b>，而不是像价格上限那样由供给曲线决定。<span class="src">对应课件第 14 页</span></div></div>
+  <p>与价格上限的区别就在这里：价格上限下，供给不足使交易量<b>小于</b>均衡量，短缺由排队、配给消化；政府低价供应则由政府把缺口补上，交易量反而<b>大于</b>均衡量，问题从「供给不足」变成「过度消费」。</p>
+  <div class="formula">
+    政府定价 16：Q<sup>D</sup> = 110 − 4×16 = 46　　Q<sup>S</sup> = −10 + 2×16 = 22　　政府补足 = 24
+  </div>
+  <p>福利核算：CS = ½ × (27.5 − 16) × 46 = <b>264.5</b>（比原来的 112.5 大）；PS = ½ × (16 − 5) × 22 = 121。Q<sup>*</sup> 之后多出来的 16 单位，边际成本从 20 升到 28，而支付意愿从 20 降到 16，每一单位都在亏，合计 DWL = ½ × (28 − 16) × 16 = <b>96</b>。政府为补足的 24 单位付出的成本高于售价，净财政成本 = ½ × (28 − 16) × 24 = <b>144</b>。三者相加：264.5 + 121 − 144 = 241.5，比原来的 337.5 正好少 96。</p>
 
   <h3>商品税或政府补贴的「无谓损失」</h3>
   <p>在特定税率 t 下：</p>
@@ -1579,7 +1623,7 @@ details p,details ul{font-size:14px}
 
   <div class="fig"><div class="figrow"><svg width="330" height="300" viewBox="0 0 330 300" role="img" aria-label="富有弹性时无谓损失较大">
 <defs><marker id="aL05_p15a" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="152.4,145.0 179.0,164.8 152.4,184.7" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="152.4,145.0 179.0,164.8 152.4,184.7" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="46" y1="264" x2="321" y2="264" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p15a)"/>
 <line x1="46" y1="264" x2="46" y2="18" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p15a)"/>
 <text x="318" y="282" font-size="12" fill="#5d6673" text-anchor="end">数量</text>
@@ -1594,7 +1638,7 @@ details p,details ul{font-size:14px}
 <text x="189.6" y="216.4" font-size="10.5" fill="#9c3d27" text-anchor="start" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">DWL 大</text>
 </svg><svg width="330" height="300" viewBox="0 0 330 300" role="img" aria-label="缺乏弹性时无谓损失较小">
 <defs><marker id="aL05_p15b" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
-<polygon points="112.5,174.8 125.8,204.5 112.5,214.4" fill="#9c3d27" fill-opacity="0.2"/>
+<polygon points="112.5,174.8 125.8,204.5 112.5,214.4" fill="#9c3d27" fill-opacity="0.24"/>
 <line x1="46" y1="264" x2="321" y2="264" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p15b)"/>
 <line x1="46" y1="264" x2="46" y2="18" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#aL05_p15b)"/>
 <text x="318" y="282" font-size="12" fill="#5d6673" text-anchor="end">数量</text>
@@ -3233,8 +3277,47 @@ details p,details ul{font-size:14px}
   </div>
 </section>
 
+
+<section id="chg">
+  <div class="sec-head">
+    <div class="num">C</div>
+    <div>
+      <h2>修改日志</h2>
+      <div class="kicker">附录 · 版本记录 · 新的在上</div>
+    </div>
+  </div>
+
+  <p>这里记录每一次内容与图示的修订，方便已经看过旧版的同学校对差异。只写改动要点，细节见正文；新版本置顶，最上面一行就是当前版本。</p>
+
+  <div class="log">
+    <div class="day new">
+      <div class="d">2026-10-21<small>图示修正</small></div>
+      <ul>
+        <li><b>第 5 讲 图 5-10「政府低价供应」重画。</b>原图误作价格上限模型（交易量由供给曲线决定）。课件原图是政府定价与需求曲线相交、政府补足私人供给的缺口，因此供应量由需求决定。已按此重绘，并补上 CS、DWL 与财政成本的算例。</li>
+        <li><b>第 5 讲 图 5-9「政府补贴」标注修正。</b>「消费者价格 / 生产者价格」原都浮在 22 线上方且顺序颠倒，现各自贴住 19、22 两条价格线并加引线；图注补上政府支出 102、DWL 6 两个数。</li>
+      </ul>
+    </div>
+
+    <div class="day">
+      <div class="d">2026-10-19<small>结构与内容重做</small></div>
+      <ul>
+        <li><b>全篇按课件讲次与标题重排。</b>删除自拟主线，改为 9 讲原编号（07 即国际贸易）加附录；54 张图全部重绘，每张标注对应课件页码。</li>
+        <li><b>第 7 讲补齐九种情形。</b>出口 / 进口 × 关税 / 配额 × 小国 / 大国；并修正出口关税图的算术错误（税率取到禁止性关税，出口量应为 0）。</li>
+        <li><b>第 8 讲补「外部性也有无谓损失」一段。</b>并修正三处 DWL 三角形的位置——应夹在 Q<sup>*</sup> 与 Q<sub>m</sub> 之间。</li>
+        <li><b>附录 A 改为「原题 + 点击看解析」。</b>26 题逐题呈现，补入作业 4；作业 3 第 3 题答案更正为 A、C、D。</li>
+        <li><b>隐私与声明。</b>教师仅留缩写 wh，删除助教信息与真实姓名；新增参考资料、使用范围、AI 使用说明、内容说明、作者五项。</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout insight">
+    <span class="lab">使用提示</span>
+    <p>图示修正往往伴随数值变化，旧版里对应的解析可能已经对不上。如果你手上是更早的 PDF，建议按上面「最近更新」的日期重新下载；网页版刷新即可（<b>Ctrl/Cmd + F5</b> 强制刷新可避开缓存）。</p>
+  </div>
+</section>
+
 <footer style="margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:#9a9284">
-  经济学原理 · 课程笔记　|　按 2026 秋 9 讲课件（144 页）与作业 1—4 整理　|　按 <b>Ctrl/Cmd + P</b> 可导出 PDF　|　本资料仅限北京大学学生复习使用
+  经济学原理 · 课程笔记　|　按 2026 秋 9 讲课件（144 页）与作业 1—4 整理　|　按 <b>Ctrl/Cmd + P</b> 可导出 PDF　|　本资料仅限北京大学学生复习使用　|　最近更新 2026-10-21　|　<a href="#chg" style="color:#9c3d27;text-decoration:none">修改日志</a>
 </footer>
 
 </div>
