@@ -240,6 +240,10 @@ details p,details ul{font-size:14px}
     <a href="#l10"><span class="n">10</span>生产成本</a>
     <a href="#l11"><span class="n">11</span>完全竞争</a>
     <a href="#l12"><span class="n">12</span>垄断与垄断竞争</a>
+    <a href="#l13"><span class="n">13</span>博弈论基础（一）</a>
+    <a href="#l14"><span class="n">14</span>博弈论基础（二）</a>
+    <a href="#l15"><span class="n">15</span>寡头</a>
+    <a href="#l16"><span class="n">16</span>劳动力市场</a>
     <div class="grp">附录</div>
     <a href="#apa"><span class="n">A</span>作业 1—5 原题与解析</a>
     <a href="#apc"><span class="n">B</span>期中真题（2025 秋）</a>
@@ -261,18 +265,18 @@ details p,details ul{font-size:14px}
   <div class="eyebrow">PRINCIPLES OF ECONOMICS · 2026 AUTUMN</div>
   <h1>经济学原理<br><em>课程笔记</em></h1>
   <div class="meta">
-    <span>第 1—12 讲</span>
+    <span>第 1—16 讲</span>
     <span>按 PPT 标题与编号</span>
-    <span>66 张图示</span>
-    <span>附作业 1—5 与两份真题卷</span>
+    <span>73 张图示</span>
+    <span>附作业 1—6 与两份真题卷</span>
   </div>
-  <div class="upd">最近更新 2026-11-01　新增第 10—12 讲、作业 5 与 2026 期中真题　<a href="#chg">修改日志 →</a></div>
+  <div class="upd">最近更新 2026-11-17　新增第 13—16 讲（博弈论、寡头、劳动力市场）与作业 6　<a href="#chg">修改日志 →</a></div>
 
   <div class="declare">
     <div class="dt">声明</div>
     <dl>
       <dt>参考资料</dt>
-      <dd>2026 年秋季学期《经济学原理》课程课件（第 1—9 讲，共 144 页）；作业 1—4 及作业 1—3 参考答案；2025 秋期中试题与答案。</dd>
+      <dd>2026 年秋季学期《经济学原理》课程课件（第 1—16 讲，共 250 页）；作业 1—6（作业 5 官方答案未发，解析自拟）；2025 秋与 2026 秋期中试题与答案。</dd>
       <dt>使用范围</dt>
       <dd>本资料仅限北京大学学生复习使用。</dd>
       <dt>AI 使用说明</dt>
@@ -3439,11 +3443,654 @@ details p,details ul{font-size:14px}
   </div>
 </section>
 
+<section id="l13">
+  <div class="sec-head">
+    <div class="num">13</div>
+    <div>
+      <h2>博弈论基础（一）</h2>
+      <div class="kicker">第 13 讲 · 课件第 1—13 页 · <b>当你的最优取决于别人怎么做</b></div>
+    </div>
+  </div>
+
+  <p class="small"><b>本次新增</b>　本讲为 2026-11-17 新增，依据新课件《Principles 13 博弈论1》（13 页）整理。</p>
+
+  <p>前十二讲里，企业的决策只依赖两样东西：自己的成本曲线，和市场给出的价格或需求。哪怕讲到寡头，也只是说「企业之间存在策略互动」，没有工具处理它。这一讲补上工具。<b>博弈论</b>研究的就是这种「我的回报取决于你的选择、你的回报也取决于我的选择」的场合。第 15 讲的古诺与伯特兰、第 14 讲的拍卖与信号，都是它的应用。</p>
+
+  <h3>博弈论研究什么</h3>
+  <div class="card def">
+    <div class="term">博弈论 <span class="en">Game Theory</span></div>
+    <p>研究人或组织之间的<b>策略性互动</b>（strategic interaction）：一方的回报不仅取决于自己的行动，还取决于他人的行动。</p>
+  </div>
+  <p>按博弈人能否达成有约束力的约定，课件分了三类：</p>
+  <ul>
+    <li><b>非合作博弈</b>：博弈人各自独立选择策略，不能签订可执行的合作协议。本讲与下一讲的主体都是这一类。</li>
+    <li><b>合作博弈</b>：博弈人先就合作达成协议，再分配合作成果。重点是「怎么分才稳」。</li>
+    <li><b>联盟博弈</b>：博弈人组成若干联盟，联盟内部合作、联盟之间竞争。</li>
+  </ul>
+  <div class="callout insight">
+    <span class="lab">为什么从这里开始</span>
+    <p>非合作博弈是「微观基础」：它把「企业在寡头市场里会怎么做」还原成一个个具体的选择问题。后面第 15 讲的所有结论——古诺产量、伯特兰价格战、卡特尔的不稳定——都可以从本讲的纳什均衡直接推出来。</p>
+  </div>
+
+  <h3>博弈的描述：三要素与回报矩阵</h3>
+  <div class="card def">
+    <div class="term">博弈的三要素</div>
+    <p><b>博弈人</b>（players）、<b>纯策略</b>（pure strategies）、<b>回报函数</b>（payoff function）。给出这三样，一个策略型博弈就描述完了。</p>
+  </div>
+  <p>两人有限博弈通常写成一张表：行是博弈人 1 的策略，列是博弈人 2 的策略，每个格子里的<b>第一个数字是博弈人 1 的回报，第二个是博弈人 2 的</b>。记法（上，左）表示「1 选上、2 选左」这个策略组合。</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th></th><th class="c">左</th><th class="c">中</th><th class="c">右</th></tr></thead>
+    <tbody>
+      <tr><td><b>上</b></td><td class="c">4, 3</td><td class="c">5, 1</td><td class="c">6, 2</td></tr>
+      <tr><td><b>中</b></td><td class="c">2, 1</td><td class="c">8, 4</td><td class="c">3, 6</td></tr>
+      <tr><td><b>下</b></td><td class="c">3, 0</td><td class="c">9, 6</td><td class="c">2, 8</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 13-1　课件第 3 页的例子。博弈人集合 {1, 2}，纯策略集合分别是 {上, 中, 下} 与 {左, 中, 右}。</p>
+
+  <div class="callout warn">
+    <span class="lab">读表的两个坑</span>
+    <p>① 回报是<b>序数</b>的：只能比较大小，不能说「4 比 3 好 1 个单位」，更不能把两人的回报相加当成社会福利——除非题目明说。② 不要把它当成「得分表」去找总分最高的格子：博弈论关心的是<b>每个人各自的最优</b>，不是总和最大。</p>
+  </div>
+
+  <h3>纯策略、混合策略与支撑</h3>
+  <div class="card def">
+    <div class="term">混合策略 <span class="en">Mixed Strategy</span></div>
+    <p>纯策略集合上的一个<b>概率分布</b>。概率大于零的那些纯策略构成这个混合策略的<b>支撑</b>（support）。混合策略的回报是<b>期望回报</b>。</p>
+  </div>
+  <p>纯策略是「一定选这个」；混合策略是「按某个概率随机选」。注意随机是<b>给别人看的</b>：如果对手知道你的确定性选择，他就能针对性克制你——这正是「锤子剪刀布」里不能有固定套路的原因。</p>
+  <div class="formula">
+    E[u<sub>i</sub>] = Σ<sub>s</sub> σ<sub>i</sub>(s) · u<sub>i</sub>(s, σ<sub>−i</sub>)
+    <small>σ<sub>i</sub> 是博弈人 i 的混合策略，σ<sub>−i</sub> 是其他人的（混合）策略组合。</small>
+  </div>
+
+  <h3>纳什均衡</h3>
+  <div class="card def">
+    <div class="term">纳什均衡 <span class="en">Nash Equilibrium</span></div>
+    <p>一个策略组合，如果<b>给定其他人的策略</b>，每个人的策略都是自己的最优选择，那么它是纳什均衡。换一种说法：<b>纳什均衡是自我实现的预期</b>——如果每个人都预期别人会这么做，那么没有人有动机改变自己的做法。</p>
+  </div>
+  <p>两个加强的概念：</p>
+  <ul>
+    <li><b>强纳什均衡</b>：没有任何一个「联盟」有动机联合改变策略。它比普通纳什均衡更稳。</li>
+    <li><b>Nash（1950）存在性定理</b>：任何<b>有限</b>的策略型博弈（博弈人有限、纯策略有限）至少有一个<b>混合策略</b>纳什均衡。纯策略均衡可能一个都没有，但混合策略均衡一定存在。</li>
+  </ul>
+  <p>检验一个格子是不是纳什均衡，用「划斜线法」：固定对方的策略，看自己这一列（或这一行）里哪个回报最大，划一下；两边的斜线落在同一个格子里，就是纳什均衡。在表 13-1 中：给定 2 选「左」，1 的最优是「上」（4 &gt; 2、3）；给定 2 选「中」，1 的最优是「下」（9）；给定 2 选「右」，1 的最优是「上」（6）。反过来给定 1 选「上」，2 的最优是「左」（3 &gt; 1、2）。所以<b>（上，左）</b>是纳什均衡，回报（4, 3）。</p>
+  <div class="callout tip">
+    <span class="lab">一句话记住</span>
+    <p>纳什均衡回答的是「<b>谁都没有单方面改变的动力</b>」，不是「结果最好」。它可以是所有人都很惨的组合——囚徒困境就是这样。</p>
+  </div>
+
+  <h3>占优策略与囚徒困境</h3>
+  <div class="card def">
+    <div class="term">占优策略 <span class="en">Dominant Strategy</span></div>
+    <p>如果无论其他人选什么，策略 s 都给博弈人 A 带来不低于（严格高于）其他任何策略的回报，那么 s 是 A 的<b>弱（强）占优策略</b>；此时称 s 占优于其他策略。</p>
+  </div>
+  <p>两条在考试里反复出现的结论：</p>
+  <ul>
+    <li>理性的人<b>不会选择被强占优的策略</b>——无论对手怎么做，它都严格更差。</li>
+    <li><b>被弱占优的策略仍然可能出现在纳什均衡里</b>：因为「不劣于」允许打平，打平时对手的反应可以把弱占优策略变成均衡的一部分。这是作业 6 第 4 题的考点。</li>
+  </ul>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th></th><th class="c">嫌疑人 2：认罪</th><th class="c">嫌疑人 2：否认</th></tr></thead>
+    <tbody>
+      <tr><td><b>嫌疑人 1：认罪</b></td><td class="c">−2, −2</td><td class="c">0, −3</td></tr>
+      <tr><td><b>嫌疑人 1：否认</b></td><td class="c">−3, 0</td><td class="c">−1, −1</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 13-2　囚徒困境。对每个人来说，「认罪」都严格优于「否认」：对方认罪时 −2 &gt; −3，对方否认时 0 &gt; −1。</p>
+
+  <p>「认罪」是双方的<b>强占优策略</b>，所以（认罪，认罪）是唯一的纳什均衡，回报（−2, −2）。而（否认，否认）能给双方 −1，<b>帕累托优于</b>均衡结果，却不是均衡——给定对方否认，我有动机改口认罪换取 0。这就是「个体理性导致集体次优」的最小模型。</p>
+
+  <p>把矩阵改一个数，结论就变了。课件给的「修改后的囚徒困境」：</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th></th><th class="c">嫌疑人 2：认罪</th><th class="c">嫌疑人 2：否认</th></tr></thead>
+    <tbody>
+      <tr><td><b>嫌疑人 1：认罪</b></td><td class="c">−2, −2</td><td class="c">0, −3</td></tr>
+      <tr><td><b>嫌疑人 1：否认</b></td><td class="c">−2, 0</td><td class="c">−1, −1</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 13-3　课件第 9 页。左下角由（−3, 0）改为（−2, 0）。</p>
+  <p>此时「认罪」只是<b>弱</b>占优：对方否认时，认罪得 0、否认得 −1，仍更好；对方认罪时，认罪得 −2、否认也得 −2，打平。于是<b>（认罪，认罪）与（否认，认罪）都是纳什均衡</b>——后者里博弈人 1 用了被弱占优的策略，但因为打平，他没有严格动机改变。</p>
+
+  <h3>混合策略均衡</h3>
+  <p>「锤子剪刀布」没有纯策略均衡：无论你固定出什么，对手都有克制它的选择。但它有唯一的混合策略均衡——<b>双方各以 1/3 的概率出锤子、剪刀、布</b>。理由是对称性：只要你的分布让对手在三个纯策略上的期望回报完全相等，他就无从选择；而唯一能做到这一点的分布就是均匀分布。</p>
+  <div class="card def">
+    <div class="term">求解混合策略均衡的关键性质</div>
+    <p>在混合策略均衡中，给定其他人的策略，博弈人在自己<b>支撑内的任何一个纯策略上都是无差异的</b>。否则他会把概率全部移到更好的那个纯策略上，混合就不再是最优。</p>
+  </div>
+  <p>用这个性质解「监督博弈」：雇主选择检查的概率 p，雇员选择怠工的概率 q。设工资 w、努力成本 e、监督成本 m、产出 v，且 v &gt; w &gt; e &gt; m。</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th></th><th class="c">雇主：检查（p）</th><th class="c">雇主：不检查（1−p）</th></tr></thead>
+    <tbody>
+      <tr><td><b>雇员：怠工（q）</b></td><td class="c">0, −m</td><td class="c">w, −w</td></tr>
+      <tr><td><b>雇员：认真（1−q）</b></td><td class="c">w − e, v − w − m</td><td class="c">w − e, v − w</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 13-4　监督博弈。怠工被抓得 0，没被抓得 w；认真无论被查与否都得 w − e。</p>
+  <p>雇员的 indifference：怠工与认真的期望回报相等 ⇒ qw = w − e ⇒ <b>p = e/w</b> 时雇员无差异（注意：决定雇员行为的是<b>雇主的</b>检查概率）。雇主的 indifference：检查与不检查相等 ⇒ −qm + (1−q)(v−w−m) = −qw + (1−q)(v−w) ⇒ <b>q = m/w</b>。所以混合均衡是 p* = e/w、q* = m/w。</p>
+
+  <div class="fig"><svg width="680" height="390" viewBox="0 0 680 390" role="img" aria-label="示意图">
+<defs><marker id="af131" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<line x1="72" y1="348" x2="647" y2="348" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af131)"/>
+<line x1="72" y1="348" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af131)"/>
+<text x="644" y="366" font-size="12" fill="#5d6673" text-anchor="end">雇主检查的概率 p</text>
+<text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">雇员怠工的概率 q</text>
+<line x1="294.0" y1="348" x2="294.0" y2="34.0" stroke="#9c3d27" stroke-width="1.6" stroke-dasharray="6 4"/>
+<line x1="72" y1="159.6" x2="638.0" y2="159.6" stroke="#9c3d27" stroke-width="1.6" stroke-dasharray="6 4"/>
+<circle cx="294.0" cy="159.6" r="4" fill="#9c3d27"/>
+<text x="294.0" y="376.3" font-size="12" fill="#9c3d27" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">p = e/w</text>
+<text x="52.6" y="163.6" font-size="12" fill="#9c3d27" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">q = m/w</text>
+<text x="313.4" y="139.2" font-size="12.5" fill="#9c3d27" text-anchor="start" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">混合均衡</text>
+<text x="105.3" y="59.1" font-size="11.5" fill="#a8791f" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">q → 1（雇员怠工）</text>
+<text x="416.0" y="65.4" font-size="11.5" fill="#2b4a7d" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">p → 1（雇主检查）</text>
+<text x="416.0" y="291.5" font-size="11.5" fill="#a8791f" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">q → 0（雇员认真）</text>
+<text x="105.3" y="316.6" font-size="11.5" fill="#2b4a7d" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">p → 0（雇主不检查）</text>
+<text x="105.3" y="253.8" font-size="10.5" fill="#5d6673" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">工资 w = 10，努力成本 e = 4</text>
+<text x="105.3" y="272.6" font-size="10.5" fill="#5d6673" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">监督成本 m = 6，产出 v = 12</text>
+</svg><div class="cap">图 13-1　<b>监督博弈的混合均衡</b>：雇主的检查概率 p 与雇员的怠工概率 q 相互决定。p &lt; e/w 时雇员选择怠工，q &gt; m/w 时雇主选择检查，两条临界线交于 (e/w, m/w)。<span class="src">对应课件第 11 页</span></div></div>
+
+  <p>把四个数代进去（w = 10、e = 4、m = 6、v = 12）：p* = 0.4、q* = 0.6。含义很直接——<b>监督成本 m 越高，均衡怠工率越高</b>；<b>努力成本 e 越高（干活越累），雇主越要频繁检查</b>。这也解释了一个反直觉现象：提高检查频率并不能消灭怠工，只会把怠工率压到 m/w 为止，再往上查只是白花钱。</p>
+
+  <p>三个经典的两人博弈，结论要能背下来：</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>博弈</th><th>结构</th><th>纯策略均衡</th><th>混合策略均衡</th></tr></thead>
+    <tbody>
+      <tr><td><b>猎鹿</b>（stag hunt）</td><td>都去猎鹿最好，但对方去猎兔时自己猎鹿会饿死</td><td>（鹿，鹿）、（兔，兔）</td><td>各 (7/8, 1/8)，回报 63/8</td></tr>
+      <tr><td><b>性别之战</b></td><td>都希望在一起，但偏好不同的节目</td><td>（足球，足球）、（芭蕾，芭蕾）</td><td>(2/3, 1/3) 与 (1/3, 2/3)，回报 2/3</td></tr>
+      <tr><td><b>胆小鬼</b>（chicken）</td><td>都不退让会两败俱伤</td><td>（冲，躲）、（躲，冲）</td><td>各 (2/7, 5/7)</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 13-5　课件第 12—13 页。三者都是「多均衡」：猎鹿与性别之战偏协调，胆小鬼偏对抗。</p>
+
+  <p><b>多均衡</b>是这类博弈的核心难题：理论只说「这两个组合都稳定」，没说会落在哪一个。课件指出，<b>事前沟通</b>可能锁定较好的均衡（都去猎鹿），但沟通本身有<b>可信度</b>问题——嘴上说猎鹿，真到了林子里看见兔子还是会动心。下一讲的相关均衡，就是给「沟通」一个正式的机制。</p>
+
+  <div class="callout tip">
+    <span class="lab">本讲小结</span>
+    <p>博弈论的三要素（博弈人、纯策略、回报）把「策略互动」写成了可以计算的对象；纳什均衡是「谁都不想单方面改变」的策略组合，它是自我实现的预期，不保证有效率。占优策略是更强的概念：强占优一定被采用，弱占优未必。纯策略均衡可能不存在，但有限博弈的混合策略均衡一定存在，求法就是让对手在支撑内无差异。多均衡时，沟通与信号开始起作用——这是第 14 讲的主题。</p>
+  </div>
+</section>
+
+
+<section id="l14">
+  <div class="sec-head">
+    <div class="num">14</div>
+    <div>
+      <h2>博弈论基础（二）</h2>
+      <div class="kicker">第 14 讲 · 课件第 1—14 页 · <b>信号、顺序与信息不对称</b></div>
+    </div>
+  </div>
+
+  <p class="small"><b>本次新增</b>　本讲为 2026-11-17 新增，依据新课件《Principles 14 博弈论2》（14 页）整理。</p>
+
+  <p>第 13 讲处理的是「同时出手」且人人都知道对方底细的博弈。这一讲放开两个假设：<b>时间</b>（有人先动）与<b>信息</b>（有人知道得更多）。放开之后，纳什均衡不够用了，需要三个新概念：相关均衡、子博弈完美均衡、完美贝叶斯均衡。</p>
+
+  <h3>相关均衡</h3>
+  <div class="card def">
+    <div class="term">相关均衡 <span class="en">Correlated Equilibrium</span></div>
+    <p>博弈开始前，有一个<b>公共信号源</b>按某个联合概率分布，向每个参与者私下发出行动建议；建议的产生规则是所有博弈人的公共知识。如果每个人收到建议后都<b>没有动机单方面违背</b>，这个「信号—行动」组合就是相关均衡。</p>
+  </div>
+  <p>它比纳什均衡更一般：纳什均衡是「各人独立随机」，相关均衡允许<b>各人的随机化相互关联</b>。用课件第 3 页的例子：</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th></th><th class="c">L</th><th class="c">R</th></tr></thead>
+    <tbody>
+      <tr><td><b>U</b></td><td class="c">5, 1</td><td class="c">0, 0</td></tr>
+      <tr><td><b>D</b></td><td class="c">4, 4</td><td class="c">1, 5</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 14-1　「协同产生价值」。两个纯策略均衡（U, L）与（D, R），混合策略均衡各 1/2，期望回报（2.5, 2.5）。</p>
+  <p>三个结果的对比很能说明问题：</p>
+  <ul>
+    <li>两个纯策略均衡的回报分别是（5, 1）与（1, 5），<b>总剩余都是 6，但分配极不均</b>；</li>
+    <li>混合策略均衡各得 2.5，总剩余 5，<b>比任何一个纯策略均衡都差</b>——随机化本身浪费了价值；</li>
+    <li>如果两人<b>扔一枚硬币</b>决定用哪个纯策略均衡，期望回报（3, 3），总剩余 6，且分配平均。</li>
+  </ul>
+  <p>扔硬币已经比混合策略好，但它仍然要求两人能看见同一枚硬币。更妙的是<b>信号灯</b>：设一盏红、黄、蓝三色等概率的信号灯，博弈人 1 分不清红与黄，博弈人 2 分不清红与蓝；约定「1 看见蓝选 U、否则选 D；2 看见黄选 R、否则选 L」。可以验证每一条建议下都无人想违背，期望回报升到 <b>(10/3, 10/3)</b>——比扔硬币的 (3, 3) 还好。原因是对信息的<b>不对称切割</b>让两人在更多情形下协调到了总剩余为 6 的组合上。</p>
+  <div class="callout insight">
+    <span class="lab">反过来看：知道太多不一定有利</span>
+    <p>课件第 4 页的三人博弈里，唯一的纳什均衡回报只有（1, 0, 0）；但博弈人 1 和 2 若能通过掷硬币协同，可以拿到（2, 2, 2）——<b>前提是博弈人 3 观察不到硬币</b>。信息结构本身会影响能达到的均衡，这与「信息越多越好」的直觉相反。</p>
+  </div>
+
+  <h3>完备信息下的动态博弈</h3>
+  <p>动态博弈里，博弈人<b>先后</b>行动。策略的定义也随之改变：不再是「选一个动作」，而是<b>一个完整的行动计划</b>——在每一个可能到达的决策节点上，我分别做什么。哪怕某个节点实际到不了，计划里也要写明。</p>
+  <div class="card def">
+    <div class="term">子博弈完美均衡 <span class="en">Subgame Perfect Equilibrium</span></div>
+    <p>要求每个博弈人在<b>任何一个决策节点</b>上，都选择从该节点看来的最优行动。它排除了「不可置信的威胁」：说了到了那一步不会做的事，就不算数。</p>
+  </div>
+  <p>求解方法是<b>逆向归纳</b>：从最后一个节点往前推，先定最后一步的最优，再把它代回前一步。</p>
+
+  <div class="fig"><svg width="680" height="330" viewBox="0 0 680 330" role="img" aria-label="扩展式博弈树">
+<defs><marker id="f141" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<circle cx="120" cy="165" r="4.5" fill="#fff" stroke="#1d2430" stroke-width="1.8"/>
+<text x="120" y="153" font-size="12" fill="#1d2430" text-anchor="middle" font-weight="650">P1</text>
+<line x1="124" y1="160" x2="300" y2="85" stroke="#5d6673" stroke-width="1.8"/>
+<text x="200" y="108" font-size="12.5" fill="#5d6673" text-anchor="start" font-style="italic">U</text>
+<line x1="124" y1="170" x2="300" y2="245" stroke="#5d6673" stroke-width="1.8"/>
+<text x="200" y="228" font-size="12.5" fill="#5d6673" text-anchor="start" font-style="italic">D</text>
+<circle cx="300" cy="85" r="3.2" fill="#3c6b52"/>
+<text x="310" y="89" font-size="12.5" fill="#3c6b52">（6, 3）</text>
+<circle cx="300" cy="245" r="4.5" fill="#fff" stroke="#1d2430" stroke-width="1.8"/>
+<text x="300" y="233" font-size="12" fill="#1d2430" text-anchor="middle" font-weight="650">P2</text>
+<line x1="304" y1="240" x2="470" y2="195" stroke="#5d6673" stroke-width="1.8"/>
+<text x="380" y="205" font-size="12.5" fill="#5d6673" text-anchor="start" font-style="italic">u</text>
+<line x1="304" y1="250" x2="470" y2="295" stroke="#5d6673" stroke-width="1.8"/>
+<text x="380" y="292" font-size="12.5" fill="#5d6673" text-anchor="start" font-style="italic">d</text>
+<circle cx="470" cy="195" r="3.2" fill="#5d6673"/>
+<text x="480" y="199" font-size="12.5" fill="#5d6673">（1, 1）</text>
+<circle cx="470" cy="295" r="3.2" fill="#5d6673"/>
+<text x="480" y="299" font-size="12.5" fill="#5d6673">（3, 6）</text>
+<text x="70" y="300" font-size="11.5" fill="#5d6673">子博弈完美均衡：(U, d)，结果（6, 3）</text>
+<text x="70" y="318" font-size="11.5" fill="#5d6673">（D, u）含不可置信的威胁：到了 P2 节点，u 只给 1，d 给 6，P2 不会执行 u</text>
+</svg><div class="cap">图 14-1　<b>不可置信的威胁</b>：博弈人 1 先选 U 或 D；若选 D，博弈人 2 再选 u 或 d。（D, u）构成纳什均衡，但到了 P2 的节点，u 只给 1、d 给 6，P2 不会执行 u，所以这个威胁不可信。<span class="src">对应课件第 6 页</span></div></div>
+
+  <p>图 14-1 是这一讲的母题。两个纳什均衡：（U, d）结果（6, 3），（D, u）结果（3, 6）。后者靠的是「P2 会选 u」这个威胁，但真到了 P2 的节点，选 u 得 1、选 d 得 6，理性人必选 d。逆向归纳只留下 <b>（U, d）</b>——博弈人 1 预见到威胁不可信，索性自己选 U 拿走 6。</p>
+  <div class="callout warn">
+    <span class="lab">纳什均衡 ≠ 子博弈完美</span>
+    <p>（D, u）满足纳什均衡的定义（给定对方不变，谁都不想改），但它在 P2 的节点上包含了非最优行动。<b>子博弈完美均衡一定是纳什均衡，反之不成立</b>——这个包含关系是选择题的常客。</p>
+  </div>
+  <p>把同样的逻辑推到多回合，就是「<b>奖励善行</b>」那类博弈（课件第 7 页）：每一轮都有人可以「拿钱走人」或「继续合作」，越往后合作的总额越大，但每一轮「拿钱」的当期收益都略高。逆向归纳从最后一轮开始，结论是<b>第一轮就结束</b>，子博弈完美均衡的回报是（1, 0）——合作在完全理性的有限博弈里维持不住。</p>
+  <p>但<b>重复博弈</b>能改变结论。课件第 8 页的例子：单次博弈的均衡是（B, b）与（C, c）；如果这个博弈进行两次，就可以构造「双方约定第一回合（A, a），一旦有人偏离，第二回合就惩罚性地打（C, c）」的策略，使（A, a）成为重复博弈的均衡路径。要点是<b>惩罚必须可信</b>——（C, c）本身就是单次均衡，所以惩罚是可信的。这也是卡特尔能在一段时间内维持的机制（第 15 讲会再用一次）。</p>
+  <p>还有一个方向相反的推理：<b>正向归纳</b>（forward induction）。课件第 9 页里，博弈人 2 能看见 1 选了 L，但分不清 1 选的是 M 还是 R。如果 2 观察到 1 没选 L，就应该推测是 R 而不是 M——因为选 M 对 1 而言在任何情况下都不如选 L，理性的 1 不会选 M。这类「从对方没做什么反推他是什么类型」的推理，是不完备信息博弈的入口。</p>
+
+  <h3>不完备信息：静态博弈</h3>
+  <p>不完备信息指<b>每个人知道自己是什么「类型」，但看不到别人的类型</b>。处理办法是把类型当成一个随机变量：事前服从联合概率分布，事中每个人用自己的类型和贝叶斯法则推断别人的类型分布，再在这个分布上最大化期望回报。</p>
+  <p>标准例子是<b>私人价值第二价格拍卖</b>（暗标）：N 人竞购一件不可分物品，各自估值 v<sub>1</sub> &gt; v<sub>2</sub> &gt; … &gt; v<sub>N</sub>，估值是私人信息且互不相关；出价最高者胜，按<b>第二高价</b>成交。</p>
+  <div class="card def">
+    <div class="term">二价拍卖的弱占优均衡</div>
+    <p>竞价 s<sub>i</sub> = v<sub>i</sub> 是每个人的弱占优策略。理由分两种情形：若别人的最高出价高于 v<sub>i</sub>，出 v<sub>i</sub> 输掉、收益为 0，而出更高的价即使赢了也会亏；若别人的最高出价低于 v<sub>i</sub>，出 v<sub>i</sub> 赢下并得到 v<sub>i</sub> − B &gt; 0，出更低反而可能错失。</p>
+  </div>
+  <div class="fig"><svg width="680" height="380" viewBox="0 0 680 380" role="img" aria-label="示意图">
+<defs><marker id="af142" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<line x1="72" y1="338" x2="647" y2="338" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af142)"/>
+<line x1="72" y1="338" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af142)"/>
+<text x="644" y="356" font-size="12" fill="#5d6673" text-anchor="end">你的出价 b</text>
+<text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">你的收益</text>
+<line x1="425.8" y1="338" x2="425.8" y2="34.0" stroke="#9c3d27" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="72.0,257.5 284.2,257.5" fill="none" stroke="#2b4a7d" stroke-width="2"/>
+<polyline points="284.2,186.0 567.2,186.0" fill="none" stroke="#2b4a7d" stroke-width="2"/>
+<polyline points="284.2,257.5 284.2,186.0" fill="none" stroke="#2b4a7d" stroke-width="1.2" stroke-dasharray="3 3"/>
+<polyline points="531.9,257.5 531.9,311.2" fill="none" stroke="#a8791f" stroke-width="1.2" stroke-dasharray="3 3"/>
+<polyline points="531.9,311.2 567.2,311.2" fill="none" stroke="#a8791f" stroke-width="2"/>
+<circle cx="284.2" cy="186.0" r="3" fill="#2b4a7d"/>
+<circle cx="531.9" cy="311.2" r="3" fill="#a8791f"/>
+<text x="86.2" y="53.7" font-size="12" fill="#9c3d27" text-anchor="start" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">出价 b = v 在两种情形下都不劣于其他出价</text>
+<text x="86.2" y="139.5" font-size="12" fill="#2b4a7d" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">他人最高出价 B = 6 &lt; v</text>
+<text x="298.4" y="175.3" font-size="11" fill="#2b4a7d" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">赢，得 v − B = 4</text>
+<text x="86.2" y="291.5" font-size="12" fill="#a8791f" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">他人最高出价 B′ = 13 &gt; v</text>
+<text x="517.7" y="304.0" font-size="11" fill="#a8791f" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">赢但亏 v − B′ = −3</text>
+<text x="411.6" y="125.2" font-size="12" fill="#9c3d27" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">b = v</text>
+</svg><div class="cap">图 14-2　<b>为什么「出价等于估值」是弱占优</b>：给定他人最高出价 B，收益是出价 b 的阶梯函数。无论 B &lt; v 还是 B &gt; v，b = v 都不劣于任何其他出价。<span class="src">对应课件第 12 页</span></div></div>
+  <p>课件还给了第二个均衡：<b>合谋</b>——一人出价 x ≥ v<sub>1</sub>，其余人出 ε ≪ x，成交价为 ε。这是一个纳什均衡（谁单方面抬价都要按自己的出价付钱，会亏），但它依赖「没人破坏约定」。二价拍卖因此常被用来说明：<b>博弈的均衡未必唯一，制度设计要防的是坏均衡</b>。</p>
+
+  <h3>不完备信息：动态博弈与完美贝叶斯均衡</h3>
+  <p>把「顺序」和「私人信息」放在一起，就是<b>动态不完备信息博弈</b>。此时每个博弈人对别人的行动含义有一个<b>信念</b>（belief）；博弈进行中，随着观察到的行动，信念不断被贝叶斯法则更新。</p>
+  <div class="card def">
+    <div class="term">完美贝叶斯均衡 <span class="en">Perfect Bayesian Equilibrium</span></div>
+    <p>两条要求：① 在<b>任何一个</b>决策节点，给定自己的信念，博弈人选择最优行动；② 给定所有人的行动，信念被<b>印证</b>（或至少无法被证伪）。</p>
+  </div>
+  <p>它最典型的应用是<b>信号</b>（signaling）：教育、礼物、质量保证都是「用有成本的行为证明自己的类型」。一个动作要成为可信信号，必须是<b>低类型的人模仿不起</b>的——否则高类型做、低类型也做，信号就失效了。这与第 8 讲的外部性、第 12 讲的广告都有暗线相连：信息不对称时，市场会用各种「烧钱」的方式筛选类型。</p>
+
+  <div class="callout tip">
+    <span class="lab">本讲小结</span>
+    <p>三个概念对应三种放开假设的方式：允许随机化相关联，得到<b>相关均衡</b>（可以严格优于纳什均衡）；允许先后行动，得到<b>子博弈完美均衡</b>（用逆向归纳排除不可置信的威胁）；允许私人信息，得到<b>完美贝叶斯均衡</b>（行动与信念互相印证）。考试里最常考的是三件事：相关均衡的验证、逆向归纳的求解、二价拍卖的弱占优论证。</p>
+  </div>
+</section>
+
+
+<section id="l15">
+  <div class="sec-head">
+    <div class="num">15</div>
+    <div>
+      <h2>寡头</h2>
+      <div class="kicker">第 15 讲 · 课件第 1—15 页 · <b>少数几个企业之间的策略互动</b></div>
+    </div>
+  </div>
+
+  <p class="small"><b>本次新增</b>　本讲为 2026-11-17 新增，依据新课件《Principles 15 寡头》（15 页）整理。</p>
+
+  <p>第 11、12 讲是两个极端：完全竞争（企业多到没有定价权）与垄断（只有一家）。寡头在两者之间——<b>有且仅有若干家企业</b>，每家都有定价能力，但盈利要看对手怎么做。第 13 讲的纳什均衡在这里第一次派上大用场：古诺、斯塔克尔伯格、伯特兰，本质上都是同一个利润最大化问题在不同策略变量下的解。</p>
+
+  <h3>寡头市场的特征</h3>
+  <div class="card def">
+    <div class="term">寡头 <span class="en">Oligopoly</span></div>
+    <p>有且仅有<b>若干家</b>企业生产相同或类似的产品，没有潜在的进入者，也没有相近的替代产品。企业具有一定的定价能力，且盈利受其他企业行为的影响——即存在<b>策略性互动</b>。</p>
+  </div>
+  <p>与垄断最不同的一点：<b>策略变量不同，均衡结果就不同</b>。常见的策略变量是产量与价格，而现实中企业实际在哪个维度竞争，取决于产能：</p>
+  <ul>
+    <li><b>产能受约束</b>时，企业想抢市场也供不出更多货，竞争更接近<b>产量竞争</b>；</li>
+    <li><b>产能过剩</b>时，企业只能用价格抢订单，竞争更接近<b>价格竞争</b>；</li>
+    <li>一般而言，<b>价格竞争比产量竞争更激烈</b>——这也是为什么同样的市场结构，用古诺算和用伯特兰算，结论差很多。</li>
+  </ul>
+
+  <h3>产量竞争（一）：卡特尔</h3>
+  <p>课件用一个极简的例子贯穿全讲：两家企业以<b>零成本</b>向市场供水，反需求函数 P = 120 − Q，Q = q<sub>1</sub> + q<sub>2</sub>。</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th class="c">总产量 Q</th><th class="c">价格 P</th><th class="c">总利润 PQ</th><th class="c">总产量 Q</th><th class="c">价格 P</th><th class="c">总利润 PQ</th></tr></thead>
+    <tbody>
+      <tr><td class="c">0</td><td class="c">120</td><td class="c">0</td><td class="c">60</td><td class="c">60</td><td class="c"><b>3600</b></td></tr>
+      <tr><td class="c">10</td><td class="c">110</td><td class="c">1100</td><td class="c">70</td><td class="c">50</td><td class="c">3500</td></tr>
+      <tr><td class="c">20</td><td class="c">100</td><td class="c">2000</td><td class="c">80</td><td class="c">40</td><td class="c">3200</td></tr>
+      <tr><td class="c">30</td><td class="c">90</td><td class="c">2700</td><td class="c">90</td><td class="c">30</td><td class="c">2700</td></tr>
+      <tr><td class="c">40</td><td class="c">80</td><td class="c">3200</td><td class="c">100</td><td class="c">20</td><td class="c">2000</td></tr>
+      <tr><td class="c">50</td><td class="c">70</td><td class="c">3500</td><td class="c">110</td><td class="c">10</td><td class="c">1100</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 15-1　课件第 4 页。总产量 60 时总利润最大，为 3600。</p>
+  <p>如果两家能<b>签订可执行的产量协议</b>，它们会各生产 30、平分 3600，各得 1800。这样形成的组织叫<b>卡特尔</b>（cartel）。卡特尔能实现的正是<b>垄断利润</b>——把这个市场当成一家企业来做。</p>
+
+  <h3>产量竞争（二）：古诺均衡</h3>
+  <p>但协议往往不可执行。各自独立选产量时，企业 i 的利润是 π<sub>i</sub> = q<sub>i</sub>(120 − q<sub>1</sub> − q<sub>2</sub>)。给定对手产量，自己的一阶条件给出<b>反应函数</b>：</p>
+  <div class="formula">
+    q<sub>1</sub> = 60 − q<sub>2</sub>/2，　q<sub>2</sub> = 60 − q<sub>1</sub>/2
+    <small>由 ∂π<sub>1</sub>/∂q<sub>1</sub> = 120 − 2q<sub>1</sub> − q<sub>2</sub> = 0 得到；对方多产 1 单位，自己最优减产半单位。</small>
+  </div>
+  <p>两式同时成立即纳什均衡：q<sub>1</sub> = q<sub>2</sub> = <b>40</b>，Q = 80，P = <b>40</b>，各家利润 <b>1600</b>。与卡特尔相比：总产量从 60 涨到 80，价格从 60 跌到 40，总利润从 3600 跌到 3200——<b>每家都想多产一点，结果一起把价格打下来</b>，这正是囚徒困境在寡头市场的版本。</p>
+
+  <div class="fig"><svg width="680" height="430" viewBox="0 0 680 430" role="img" aria-label="示意图">
+<defs><marker id="af151" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<line x1="72" y1="388" x2="647" y2="388" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af151)"/>
+<line x1="72" y1="388" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af151)"/>
+<text x="644" y="406" font-size="12" fill="#5d6673" text-anchor="end">企业 1 的产量 q₁</text>
+<text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">企业 2 的产量 q₂</text>
+<line x1="253.1" y1="388.0" x2="253.1" y2="274.7" stroke="#5d6673" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72.0" y1="274.7" x2="253.1" y2="274.7" stroke="#5d6673" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="343.7" y1="388.0" x2="343.7" y2="303.0" stroke="#9c3d27" stroke-width="1.2" stroke-dasharray="4 3"/>
+<polyline points="72.0,48.2 343.7,388.0" fill="none" stroke="#2b4a7d" stroke-width="2.2"/>
+<text x="180.7" y="104.8" font-size="12" fill="#2b4a7d" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">R₁：q₂ = 60 − q₁/2</text>
+<polyline points="72.0,218.1 615.4,388.0" fill="none" stroke="#a8791f" stroke-width="2.2"/>
+<text x="452.4" y="337.0" font-size="12" fill="#a8791f" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">R₂：q₁ = 60 − q₂/2</text>
+<circle cx="253.1" cy="274.7" r="4.5" fill="#9c3d27"/>
+<circle cx="343.7" cy="303.0" r="4" fill="#9c3d27"/>
+<circle cx="207.8" cy="218.1" r="3" fill="#9c3d27"/>
+<text x="264.4" y="257.7" font-size="12.5" fill="#9c3d27" text-anchor="start" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">古诺均衡 (40, 40)</text>
+<text x="355.0" y="291.7" font-size="11.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">斯塔克尔伯格 (60, 30)</text>
+<text x="144.4" y="201.1" font-size="11" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">对称点 (30, 60)</text>
+<text x="253.1" y="410.7" font-size="11" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">40</text>
+<text x="343.7" y="410.7" font-size="11" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">60</text>
+<text x="53.9" y="278.7" font-size="11" fill="#5d6673" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">40</text>
+<text x="53.9" y="307.0" font-size="11" fill="#5d6673" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">30</text>
+<text x="506.7" y="82.1" font-size="11" fill="#5d6673" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">P = 120 − Q，零成本</text>
+</svg><div class="cap">图 15-1　<b>反应曲线与两种均衡</b>：两条反应曲线的交点（40, 40）是古诺均衡；若企业 1 先行动并能被观察到，它会选 q<sub>1</sub> = 60，企业 2 只能退到 R<sub>2</sub> 上的 (60, 30)。<span class="src">对应课件第 6 页</span></div></div>
+
+  <h3>产量竞争（三）：产量领导</h3>
+  <p>若企业 1 先定产量且企业 2 能观察到，博弈变成<b>序贯</b>的，用第 14 讲的逆向归纳：先解出企业 2 的反应 q<sub>2</sub> = 60 − q<sub>1</sub>/2，再代回企业 1 的利润</p>
+  <div class="formula">
+    π<sub>1</sub> = q<sub>1</sub>[120 − q<sub>1</sub> − (60 − q<sub>1</sub>/2)] = q<sub>1</sub>(60 − q<sub>1</sub>/2)
+    <small>对 q<sub>1</sub> 求导得 60 − q<sub>1</sub> = 0，故 q<sub>1</sub> = 60。</small>
+  </div>
+  <p>于是 q<sub>1</sub> = 60、q<sub>2</sub> = 30，Q = 90，P = <b>30</b>，利润（<b>1800, 900</b>）。领导者比古诺下多赚（1800 &gt; 1600），跟随者少赚（900 &lt; 1600）——这就是<b>先动优势</b>：先行动的一方可以把对手的反应函数当成约束来最大化自己。</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th>市场结构</th><th class="c">q<sub>1</sub></th><th class="c">q<sub>2</sub></th><th class="c">Q</th><th class="c">P</th><th class="c">π<sub>1</sub></th><th class="c">π<sub>2</sub></th><th class="c">总利润</th></tr></thead>
+    <tbody>
+      <tr><td>卡特尔（合谋）</td><td class="c">30</td><td class="c">30</td><td class="c">60</td><td class="c">60</td><td class="c">1800</td><td class="c">1800</td><td class="c">3600</td></tr>
+      <tr><td>古诺（同时定产）</td><td class="c">40</td><td class="c">40</td><td class="c">80</td><td class="c">40</td><td class="c">1600</td><td class="c">1600</td><td class="c">3200</td></tr>
+      <tr><td>斯塔克尔伯格（1 领导）</td><td class="c">60</td><td class="c">30</td><td class="c">90</td><td class="c">30</td><td class="c">1800</td><td class="c">900</td><td class="c">2700</td></tr>
+      <tr><td>完全竞争（P = MC = 0）</td><td class="c">60</td><td class="c">60</td><td class="c">120</td><td class="c">0</td><td class="c">0</td><td class="c">0</td><td class="c">0</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 15-2　同一算例在四种结构下的结果。总利润随竞争加剧单调下降，产量单调上升。</p>
+
+  <h3>价格竞争：伯特兰</h3>
+  <p>若两家企业生产<b>完全相同</b>的产品、边际成本同为 c、固定成本为零，消费者只从价格低的那家买（同价则随机），那么唯一的纳什均衡是 <b>p<sub>1</sub> = p<sub>2</sub> = c</b>。三段论证（课件第 10 页）：</p>
+  <ul>
+    <li>定价低于 c 一定亏损，不会有人做；</li>
+    <li>若 c &lt; p<sub>1</sub> = p<sub>2</sub>，任一家略微降价就能吃下整个市场且仍有正利润，所以这不是均衡；</li>
+    <li>若 p<sub>1</sub> &lt; p<sub>2</sub>，低价者已占全部市场，若 p<sub>1</sub> &lt; p<sup>m</sup> 它有动机提价；若 p<sub>1</sub> ≥ p<sup>m</sup>，高价者有动机降到 (c, p<sub>1</sub>] 抢市场。</li>
+  </ul>
+  <p>结论看起来很极端：<b>只要有两家企业，价格就被压到边际成本</b>，与完全竞争一样。这被称为「伯特兰悖论」。它依赖三个很强的假设，放松任何一个结论都会变：</p>
+  <ul>
+    <li><b>产品有差异</b>（物理、空间、品牌）→ 竞争程度减弱，价格高于 MC；</li>
+    <li><b>产能受限</b> → 降价抢不到全部市场，价格战打不起来；</li>
+    <li><b>固定成本为正</b> → 这个博弈甚至<b>没有纯策略均衡</b>（低价者亏本、高价者没市场，谁都想跳）。</li>
+  </ul>
+
+  <h3>福利、合并与合谋</h3>
+  <p>寡头的福利位置可以一句话概括：<b>价格高于竞争水平、低于垄断水平；产量低于竞争、高于垄断；存在无谓损失，但通常小于垄断的</b>。同时它在「无谓损失」与「规模经济」之间取得某种平衡，并且竞争压力会促使企业投入研发。</p>
+
+  <div class="fig"><svg width="680" height="400" viewBox="0 0 680 400" role="img" aria-label="示意图">
+<defs><marker id="af152" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<polygon points="298.4,172.9 524.8,296.3 298.4,296.3" fill="#9c3d27" fill-opacity="0.24"/>
+<polygon points="411.6,234.6 524.8,296.3 411.6,296.3" fill="#9c3d27" fill-opacity="0.24"/>
+<line x1="72" y1="358" x2="647" y2="358" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af152)"/>
+<line x1="72" y1="358" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af152)"/>
+<text x="644" y="376" font-size="12" fill="#5d6673" text-anchor="end">Q</text>
+<text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">P</text>
+<line x1="298.4" y1="358.0" x2="298.4" y2="172.9" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72.0" y1="172.9" x2="298.4" y2="172.9" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="411.6" y1="358.0" x2="411.6" y2="234.6" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72.0" y1="234.6" x2="411.6" y2="234.6" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="524.8" y1="358.0" x2="524.8" y2="296.3" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<polyline points="72.0,49.4 638.0,358.0" fill="none" stroke="#2b4a7d" stroke-width="2"/>
+<text x="598.4" y="321.0" font-size="12.5" fill="#2b4a7d" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">D</text>
+<polyline points="72.0,296.3 638.0,296.3" fill="none" stroke="#5d6673" stroke-width="1.8"/>
+<text x="570.1" y="280.9" font-size="12" fill="#5d6673" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">MC = AC</text>
+<polyline points="72.0,49.4 355.0,358.0" fill="none" stroke="#a8791f" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="332.4" y="339.5" font-size="12" fill="#a8791f" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">MR</text>
+<circle cx="298.4" cy="172.9" r="3.6" fill="#9c3d27"/>
+<circle cx="411.6" cy="234.6" r="3.6" fill="#9c3d27"/>
+<circle cx="524.8" cy="296.3" r="3.6" fill="#1d2430"/>
+<text x="298.4" y="382.7" font-size="11" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">Qm</text>
+<text x="411.6" y="382.7" font-size="11" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">Qo</text>
+<text x="524.8" y="382.7" font-size="11" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">Qc</text>
+<text x="49.4" y="176.9" font-size="11" fill="#5d6673" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">Pm</text>
+<text x="49.4" y="238.6" font-size="11" fill="#5d6673" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">Po</text>
+<text x="49.4" y="300.3" font-size="11" fill="#5d6673" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">MC</text>
+<text x="343.7" y="213.0" font-size="11.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">垄断的 DWL</text>
+<text x="434.2" y="262.3" font-size="11.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">寡头仍有的 DWL</text>
+</svg><div class="cap">图 15-2　<b>寡头的无谓损失夹在中间</b>：垄断产量 Q<sub>m</sub> 到竞争产量 Q<sub>c</sub> 之间是垄断的全部无谓损失；寡头产量 Q<sub>o</sub> 更高，只损失 Q<sub>o</sub> 到 Q<sub>c</sub> 这一段。<span class="src">对应课件第 12 页</span></div></div>
+
+  <p><b>合并</b>的影响则不确定，要分两头说：</p>
+  <ul>
+    <li>合并减少市场竞争，一般使均衡价格上升、消费者剩余减少、无谓损失上升；</li>
+    <li>但合并可能带来成本节省或技术互补，这部分会压低价格；</li>
+    <li>它还<b>对其他未参与合并的企业产生正外部性</b>——对手变少、竞争变弱，它们的利润会上升。这一点常被忽略，却是反垄断审查里衡量「竞争损害」的重要依据。</li>
+  </ul>
+  <p>净福利可正可负，所以大企业之间的合并通常要通过<b>反垄断审查</b>。</p>
+
+  <p><b>合谋</b>是寡头的另一条路。显性合谋形成卡特尔，而卡特尔天生不稳定：<b>每个成员都有「欺骗」动机</b>——偷偷多产一点，在别人守约的高价下多赚一笔。但在<b>长期重复博弈</b>中，合谋可以成为均衡：偏离会被察觉并触发价格战，只要未来损失的贴现值大于当期欺骗的收益，守约就是理性的。这种没有明文协议的合谋叫<b>默契合谋</b>（tacit collusion）。</p>
+  <p>课件列了影响默契合谋能否维持的因素，可以归成三组记忆：</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:22%">维度</th><th>因素</th><th style="width:30%">对合谋的影响</th></tr></thead>
+    <tbody>
+      <tr><td>耐心</td><td>企业的贴现因子</td><td>越有耐心（贴现因子越大），未来惩罚越重，越容易合谋</td></tr>
+      <tr><td>结构</td><td>参与合谋的企业个数与市场份额</td><td>企业越多、份额越分散，越难监督与协调</td></tr>
+      <tr><td>可监督性</td><td>产品标准化程度、产量或价格信息的可得性</td><td>越标准化、信息越透明，越容易发现偏离</td></tr>
+      <tr><td>外部环境</td><td>产业增长前景、经济景气度</td><td>需求旺盛时偏离的诱惑大；衰退时价格战更易爆发</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 15-3　课件第 14 页的六个因素，按「耐心—结构—可监督性—环境」四组归类。</p>
+
+  <p>反垄断的常见类型有四类：<b>兼并与收购</b>、<b>合谋</b>、<b>垄断行为</b>（排他性交易、掠夺性定价、不公平交易）。判断标准不是「企业大不大」，而是「是否实质性减少了竞争」。</p>
+
+  <div class="callout tip">
+    <span class="lab">本讲小结</span>
+    <p>寡头的核心是「策略变量决定均衡」：定产量（古诺、斯塔克尔伯格）与定价格（伯特兰）得到完全不同的结果，产能约束是两者之间的开关。卡特尔能拿到垄断利润但内生不稳定，古诺是「各自最优」的稳态，斯塔克尔伯格体现先动优势，伯特兰把价格压到成本。福利上寡头介于竞争与垄断之间；合并与合谋的福利影响都要分正负两面说，这是论述题的得分点。</p>
+  </div>
+</section>
+
+
+<section id="l16">
+  <div class="sec-head">
+    <div class="num">16</div>
+    <div>
+      <h2>劳动力市场</h2>
+      <div class="kicker">第 16 讲 · 课件第 1—13 页 · <b>工资是怎么被决定的</b></div>
+    </div>
+  </div>
+
+  <p class="small"><b>本次新增</b>　本讲为 2026-11-17 新增，依据新课件《Principles 16 劳动力市场》（13 页）整理。</p>
+
+  <p>前十五讲几乎都在产品市场里打转：消费者买什么、企业定什么价。这一讲换个市场——<b>生产要素市场</b>。它的特殊之处在于：<b>需求方是企业，供给方是家庭</b>，而企业买劳动不是为了劳动本身，是为了把劳动变成产品再卖出去。这条「派生」的链条，决定了劳动需求曲线的形状与位置。</p>
+
+  <h3>生产要素与派生需求</h3>
+  <div class="card def">
+    <div class="term">生产要素 <span class="en">Factors of Production</span></div>
+    <p>用于生产产品或服务的投入，如劳动力、土地和资本，特指<b>多行业普遍使用</b>的投入品。</p>
+  </div>
+  <p>对生产要素的需求是<b>派生需求</b>：企业需要劳动，是因为它需要生产并供应产品。所以劳动需求曲线会随<b>产品价格</b>移动——产品涨价，同样的工人创造的收入更高，企业就愿意多雇人。这一点与产品市场的需求完全不同，是本章的第一个考点。</p>
+  <p>劳动力还是一种独特的生产要素，课件给了三条理由：它是<b>一切商品价值的终极来源</b>；个体的劳动力供给<b>由劳动者本人决定</b>（不像资本可以被人买断）；劳动力的质量取决于<b>教育、「干中学」与年龄</b>。</p>
+
+  <h3>竞争性企业的劳动需求</h3>
+  <p>假设企业在<b>产品市场与劳动力市场都是价格接受者</b>，且劳动力的边际产量递减。企业选择雇佣量 L，使边际成本等于边际收益：</p>
+  <div class="formula">
+    MC = W / MPL，　利润最大化要求 P = MC
+    <small>多雇一个人要多付 W，多产出 MPL 单位产品，所以每单位产品的边际成本是 W/MPL。</small>
+  </div>
+  <div class="formula">
+    W = P × MPL ≡ VMPL
+    <small>VMPL（value of marginal product）是「边际产量的市场价值」，它就是企业的劳动需求曲线。</small>
+  </div>
+  <p>这个式子的直觉：<b>雇一个人的成本是工资，收益是他多创造的产品值多少钱</b>。只要 VMPL &gt; W 就该继续雇，直到两者相等。也正因为 MPL 递减，VMPL 曲线向下倾斜，劳动需求曲线才向下倾斜。</p>
+
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th class="c">劳动力 L</th><th class="c">产量 Q</th><th class="c">MPL</th><th class="c">VMPL（P = 10）</th><th class="c">工资 W = 500</th><th class="c">边际利润</th><th class="c">利润</th></tr></thead>
+    <tbody>
+      <tr><td class="c">0</td><td class="c">0</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">—</td><td class="c">0</td></tr>
+      <tr><td class="c">1</td><td class="c">80</td><td class="c">80</td><td class="c">800</td><td class="c">500</td><td class="c">300</td><td class="c">300</td></tr>
+      <tr><td class="c">2</td><td class="c">180</td><td class="c">100</td><td class="c">1000</td><td class="c">500</td><td class="c">500</td><td class="c">800</td></tr>
+      <tr><td class="c">3</td><td class="c">260</td><td class="c">80</td><td class="c">800</td><td class="c">500</td><td class="c">300</td><td class="c">1100</td></tr>
+      <tr><td class="c">4</td><td class="c">320</td><td class="c">60</td><td class="c">600</td><td class="c">500</td><td class="c">100</td><td class="c"><b>1200</b></td></tr>
+      <tr><td class="c">5</td><td class="c">360</td><td class="c">40</td><td class="c">400</td><td class="c">500</td><td class="c">−100</td><td class="c">1100</td></tr>
+      <tr><td class="c">6</td><td class="c">380</td><td class="c">20</td><td class="c">200</td><td class="c">500</td><td class="c">−300</td><td class="c">800</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 16-1　课件第 4 页。第 5 个人的 VMPL 只有 400，低于工资 500，边际利润转负，所以最优雇佣量是 4，利润 1200。</p>
+
+  <div class="fig"><svg width="680" height="400" viewBox="0 0 680 400" role="img" aria-label="示意图">
+<defs><marker id="af161" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<line x1="72" y1="358" x2="647" y2="358" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af161)"/>
+<line x1="72" y1="358" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af161)"/>
+<text x="644" y="376" font-size="12" fill="#5d6673" text-anchor="end">劳动力 L</text>
+<text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">VMPL 与工资</text>
+<line x1="72" y1="223.0" x2="638.0" y2="223.0" stroke="#9c3d27" stroke-width="1.8" stroke-dasharray="6 4"/>
+<polyline points="111.3,142.0 189.9,142.0 189.9,88.0 268.5,88.0 268.5,142.0 347.1,142.0 347.1,196.0 425.8,196.0 425.8,250.0 504.4,250.0 504.4,304.0 583.0,304.0" fill="none" stroke="#2b4a7d" stroke-width="2.2"/>
+<circle cx="386.4" cy="223.0" r="4" fill="#9c3d27"/>
+<line x1="386.4" y1="290.5" x2="465.1" y2="290.5" stroke="#9c3d27" stroke-width="2.4"/>
+<line x1="386.4" y1="286.5" x2="386.4" y2="294.5" stroke="#9c3d27" stroke-width="1"/>
+<line x1="465.1" y1="286.5" x2="465.1" y2="294.5" stroke="#9c3d27" stroke-width="1"/>
+<text x="378.6" y="210.8" font-size="11.5" fill="#9c3d27" text-anchor="end" font-weight="650" stroke="#fffdf9" stroke-width="3" paint-order="stroke">最优雇佣量 L* = 4</text>
+<text x="95.6" y="206.8" font-size="12" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">W = 500</text>
+<text x="378.6" y="287.3" font-size="11" fill="#9c3d27" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">第 5 人：VMPL 400 &lt; W 500</text>
+<text x="95.6" y="58.3" font-size="12" fill="#2b4a7d" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">VMPL = P × MPL（P = 10）</text>
+</svg><div class="cap">图 16-1　<b>VMPL 就是劳动需求曲线</b>：阶梯是每多雇一人的边际产量值，水平线是市场工资。只要 VMPL &gt; W 就继续雇，直到 L* = 4；第 5 人的 VMPL 已低于工资。<span class="src">对应课件第 6 页</span></div></div>
+
+  <div class="callout warn">
+    <span class="lab">注意 MPL 先升后降</span>
+    <p>表里 MPL 从 80 升到 100 再降，所以 VMPL 不是单调下降的，图 16-1 的阶梯第一步是向上的。这不违反「边际产量递减」——递减是<b>在某个点之后</b>成立（分工收益用尽之后）。做题时若给了完整表格，要按表逐行比较，不能想当然认为第一步最高。</p>
+  </div>
+
+  <p><b>劳动需求曲线的移动</b>有三个来源（课件第 8 页）：</p>
+  <ul>
+    <li><b>产品价格</b>：最终产品涨价 → VMPL = P × MPL 上升 → 劳动需求右移。</li>
+    <li><b>技术进步</b>：要分三层看。<b>企业层面</b>，技术进步提高 MPL，该企业多雇人；<b>行业层面</b>，影响不确定——「朝阳行业」的技术进步扩大就业，「夕阳行业」的技术进步反而减少就业；<b>全社会层面</b>，长期一般不影响就业总量，但会改变<b>就业结构</b>。</li>
+    <li><b>相关要素的供给</b>：给定产品价格，与劳动<b>互补</b>的要素（如机器设备）变便宜，会增加劳动需求；与劳动<b>替代</b>的要素变便宜，会减少劳动需求。</li>
+  </ul>
+
+  <h3>劳动供给</h3>
+  <p>供给侧的出发点是<b>闲暇与工作的取舍</b>：工作时间越长，消费越多、闲暇越少。工资上升有两个方向相反的效应：</p>
+  <div class="grid2">
+    <div class="card def">
+      <div class="term">替代效应</div>
+      <p>工资上升意味着<b>闲暇的机会成本变高</b>，人们减少闲暇、增加劳动供给。</p>
+    </div>
+    <div class="card def">
+      <div class="term">收入效应</div>
+      <p>工资上升意味着<b>收入更高</b>，消费的边际好处下降、闲暇的边际好处上升，人们增加闲暇、减少劳动供给。</p>
+    </div>
+  </div>
+  <p>两者的净效果理论上不确定，但对<b>一个特定行业</b>而言，劳动供给量大多随工资上升而上升——因为工人还可以从其他行业转过来。这也是本章供求分析能用一条向上倾斜的供给曲线的原因。</p>
+
+  <div class="fig"><svg width="680" height="400" viewBox="0 0 680 400" role="img" aria-label="示意图">
+<defs><marker id="af162" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 z" fill="#b9b2a4"/></marker></defs>
+<line x1="72" y1="358" x2="647" y2="358" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af162)"/>
+<line x1="72" y1="358" x2="72" y2="26" stroke="#b9b2a4" stroke-width="1.2" marker-end="url(#af162)"/>
+<text x="644" y="376" font-size="12" fill="#5d6673" text-anchor="end">就业量 L</text>
+<text x="64" y="22" font-size="12" fill="#5d6673" text-anchor="middle">工资 W</text>
+<line x1="72.0" y1="183.5" x2="355.0" y2="183.5" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="355.0" y1="358.0" x2="355.0" y2="183.5" stroke="#b9b2a4" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="72.0" y1="196.0" x2="383.3" y2="196.0" stroke="#9c3d27" stroke-width="1.2" stroke-dasharray="4 3"/>
+<line x1="383.3" y1="358.0" x2="383.3" y2="196.0" stroke="#9c3d27" stroke-width="1.2" stroke-dasharray="4 3"/>
+<polyline points="72.0,58.9 80.5,62.7 89.0,66.4 97.5,70.1 106.0,73.9 114.4,77.6 122.9,81.4 131.4,85.1 139.9,88.8 148.4,92.6 156.9,96.3 165.4,100.0 173.9,103.8 182.4,107.5 190.9,111.3 199.4,115.0 207.8,118.7 216.3,122.5 224.8,126.2 233.3,130.0 241.8,133.7 250.3,137.4 258.8,141.2 267.3,144.9 275.8,148.6 284.2,152.4 292.7,156.1 301.2,159.9 309.7,163.6 318.2,167.3 326.7,171.1 335.2,174.8 343.7,178.6 352.2,182.3 360.7,186.0 369.2,189.8 377.6,193.5 386.1,197.2 394.6,201.0 403.1,204.7 411.6,208.5 420.1,212.2 428.6,215.9 437.1,219.7 445.6,223.4 454.1,227.2 462.5,230.9 471.0,234.6 479.5,238.4 488.0,242.1 496.5,245.8 505.0,249.6 513.5,253.3 522.0,257.1 530.5,260.8 539.0,264.5 547.4,268.3 555.9,272.0 564.4,275.8 572.9,279.5 581.4,283.2" fill="none" stroke="#2b4a7d" stroke-width="2.2"/>
+<text x="485.2" y="250.8" font-size="12" fill="#2b4a7d" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">D（VMPL）</text>
+<polyline points="72.0,308.2 80.5,304.4 89.0,300.7 97.5,296.9 106.0,293.2 114.4,289.5 122.9,285.7 131.4,282.0 139.9,278.2 148.4,274.5 156.9,270.8 165.4,267.0 173.9,263.3 182.4,259.6 190.9,255.8 199.4,252.1 207.8,248.3 216.3,244.6 224.8,240.9 233.3,237.1 241.8,233.4 250.3,229.6 258.8,225.9 267.3,222.2 275.8,218.4 284.2,214.7 292.7,211.0 301.2,207.2 309.7,203.5 318.2,199.7 326.7,196.0 335.2,192.3 343.7,188.5 352.2,184.8 360.7,181.0 369.2,177.3 377.6,173.6 386.1,169.8 394.6,166.1 403.1,162.4 411.6,158.6 420.1,154.9 428.6,151.1 437.1,147.4 445.6,143.7 454.1,139.9 462.5,136.2 471.0,132.4 479.5,128.7 488.0,125.0 496.5,121.2 505.0,117.5 513.5,113.8 522.0,110.0 530.5,106.3 539.0,102.5 547.4,98.8 555.9,95.1 564.4,91.3 572.9,87.6 581.4,83.8" fill="none" stroke="#a8791f" stroke-width="2.2"/>
+<text x="547.4" y="88.8" font-size="12" fill="#a8791f" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">S₁</text>
+<polyline points="72.0,333.1 80.5,329.3 89.0,325.6 97.5,321.9 106.0,318.1 114.4,314.4 122.9,310.6 131.4,306.9 139.9,303.2 148.4,299.4 156.9,295.7 165.4,292.0 173.9,288.2 182.4,284.5 190.9,280.7 199.4,277.0 207.8,273.3 216.3,269.5 224.8,265.8 233.3,262.0 241.8,258.3 250.3,254.6 258.8,250.8 267.3,247.1 275.8,243.4 284.2,239.6 292.7,235.9 301.2,232.1 309.7,228.4 318.2,224.7 326.7,220.9 335.2,217.2 343.7,213.4 352.2,209.7 360.7,206.0 369.2,202.2 377.6,198.5 386.1,194.8 394.6,191.0 403.1,187.3 411.6,183.5 420.1,179.8 428.6,176.1 437.1,172.3 445.6,168.6 454.1,164.8 462.5,161.1 471.0,157.4 479.5,153.6 488.0,149.9 496.5,146.2 505.0,142.4 513.5,138.7 522.0,134.9 530.5,131.2 539.0,127.5 547.4,123.7 555.9,120.0 564.4,116.2 572.9,112.5 581.4,108.8" fill="none" stroke="#a8791f" stroke-width="2.2" stroke-dasharray="6 4"/>
+<text x="476.7" y="183.5" font-size="12" fill="#a8791f" text-anchor="start" font-style="italic" stroke="#fffdf9" stroke-width="3" paint-order="stroke">S₂（移民流入）</text>
+<circle cx="355.0" cy="183.5" r="3.6" fill="#a8791f"/>
+<circle cx="383.3" cy="196.0" r="3.6" fill="#9c3d27"/>
+<text x="355.0" y="373.0" font-size="11" fill="#5d6673" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">L₁</text>
+<text x="383.3" y="387.9" font-size="11" fill="#9c3d27" text-anchor="middle" stroke="#fffdf9" stroke-width="3" paint-order="stroke">L₂</text>
+<text x="60.7" y="178.0" font-size="11" fill="#a8791f" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">W₁</text>
+<text x="60.7" y="210.5" font-size="11" fill="#9c3d27" text-anchor="end" stroke="#fffdf9" stroke-width="3" paint-order="stroke">W₂</text>
+<text x="94.6" y="56.4" font-size="11.5" fill="#9c3d27" text-anchor="start" stroke="#fffdf9" stroke-width="3" paint-order="stroke">供给增加（右移）：工资下降、就业增加</text>
+</svg><div class="cap">图 16-2　<b>竞争性行业的劳动市场均衡</b>：需求是 VMPL，供给向上倾斜。移民流入使供给右移（S<sub>1</sub> → S<sub>2</sub>），均衡工资从 W<sub>1</sub> 降到 W<sub>2</sub>、就业从 L<sub>1</sub> 升到 L<sub>2</sub>。<span class="src">对应课件第 10—11 页</span></div></div>
+
+  <p>供给曲线本身也会移动，原因有三：<b>工作偏好的变化</b>（对工作的态度变了）、<b>劳动力市场结构调整</b>（某行业吸引更多劳动力，其他行业的供给就减少）、<b>移民</b>（提高本地特定种类的劳动供给）。注意移民<b>同时影响需求</b>——移民既是劳动者也是消费者，所以工资的净变化通常小于「只看供给」的预测。</p>
+
+  <h3>劳动力的跨境流动</h3>
+  <p>课件给了四个经验事实，考简答时可直接用：</p>
+  <ul>
+    <li>移民以<b>年轻人和高技能劳动者</b>为主：年轻人文化适应能力强，高技能者通过移民实现的收入差距更大；</li>
+    <li>「人才」大多从<b>发展中国家流向发达国家</b>，主要驱动力是<b>收入差距</b>；</li>
+    <li>移民同时影响<b>输出地与输入地</b>的发展（输出地可能「人才流失」，也可能获得汇款与技术回流）；</li>
+    <li><b>移民政策影响移民结构</b>，且大多<b>有利于高技能劳动者</b>。</li>
+  </ul>
+
+  <h3>影响工资的其他因素</h3>
+  <p>前面只解释了「同一种劳动一个价」。现实里同样的劳动工资差别很大，课件列了六条：</p>
+  <div class="tbl-wrap">
+  <table>
+    <thead><tr><th style="width:26%">因素</th><th>含义</th><th style="width:32%">例子</th></tr></thead>
+    <tbody>
+      <tr><td><b>补偿性工资差别</b></td><td>对工作强度或趣味性差异的补偿</td><td>高空作业、夜班津贴</td></tr>
+      <tr><td><b>人力资本</b></td><td>对人的投资（教育、培训）形成的技能差异</td><td>大学溢价</td></tr>
+      <tr><td><b>禀赋与机遇</b></td><td>个体能力与运气的差异</td><td>同一学历的不同收入</td></tr>
+      <tr><td><b>超级明星现象</b></td><td>非排他的消费 + 网络效应，使顶尖者占据整个市场</td><td>歌手、球星、主播</td></tr>
+      <tr><td><b>最低工资与劳资谈判</b></td><td>集体决策对工资的干预</td><td>最低工资线、工会</td></tr>
+      <tr><td><b>效率工资</b></td><td>企业主动付高于市场的工资以激励员工</td><td>高于市场出清的薪酬</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="small">表 16-2　课件第 13 页。前四条解释「为什么工资有差别」，后两条解释「为什么工资可能高于均衡」。</p>
+
+  <div class="callout insight">
+    <span class="lab">与前面各讲的连线</span>
+    <p>效率工资是<b>信息不对称</b>的应用（第 14 讲）：企业看不准员工努力程度，只好用高工资增加偷懒的机会成本。超级明星现象依赖<b>规模经济</b>（第 10 讲）与<b>非竞争性消费</b>（第 9 讲公共产品）：多一个听众不减少别人的收听，顶尖供给者才能服务整个市场。最低工资则是<b>价格下限</b>（第 2 讲）：若高于均衡，会产生过剩（失业）。</p>
+  </div>
+
+  <div class="callout tip">
+    <span class="lab">本讲小结</span>
+    <p>劳动需求是派生需求，曲线就是 VMPL = P × MPL，企业雇到 VMPL = W 为止；产品价格、技术与互补/替代要素的价格都会移动它。劳动供给来自闲暇与工作的取舍，替代效应与收入效应方向相反，但行业层面通常向上倾斜。均衡工资由供求共同决定，移民、偏好与结构调整会移动供给（同时也会移动需求）。现实工资差异还要用补偿性差别、人力资本、超级明星、效率工资等补充解释。</p>
+  </div>
+</section>
+
+
 <section id="apa">
   <div class="sec-head">
     <div class="num">A</div>
     <div>
-      <h2>作业 1—4：原题与解析</h2>
+      <h2>作业 1—6：原题与解析</h2>
       <div class="kicker">附录 · <b>先看原题，再对照答案；题干照录作业原文</b></div>
     </div>
   </div>
@@ -3457,6 +4104,7 @@ details p,details ul{font-size:14px}
       <tr><td>作业 3</td><td>第 6—7 讲</td><td>5 道不定项（最多两个正确选项）+ 2 道计算</td></tr>
       <tr><td>作业 4</td><td>第 8—9 讲</td><td>3 道单选 + 2 道解释题（官方答案已核对）</td></tr>
       <tr><td>作业 5</td><td>第 10—12 讲</td><td>4 道单选 + 3 道解释与计算（官方答案未发，解析自拟）</td></tr>
+      <tr><td>作业 6</td><td>第 13—15 讲</td><td>4 道多选 + 2 道计算与证明（官方答案已核对）</td></tr>
     </tbody>
   </table>
   </div>
@@ -3965,6 +4613,105 @@ details p,details ul{font-size:14px}
     </tbody>
   </table>
   </div>
+  <h3>作业 6（第 13—15 讲）</h3>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">1</span><span class="qt">多项选择</span></div>
+    <div class="qb">
+      <p>关于“纳什均衡”，以下哪些说法是正确的？</p>
+      <p class="opt">a) 纳什均衡是一个博弈人回报的组合，能够实现博弈各方的帕累托最优化<br>b) 纳什均衡是一个博弈人回报的组合，不一定能实现博弈各方的帕累托最优化<br>c) 纳什均衡是一个博弈的时间顺序，使得博弈人自愿排队采取行动<br>d) 纳什均衡是一个博弈策略的组合，其中没有博弈人愿意改变策略</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 d</span>纳什均衡的定义落在<b>策略组合</b>上：给定其他人的策略，任何人都不能通过单方面改变策略提高回报。它不保证帕累托最优（囚徒困境就是反例），也与行动顺序无关。</p>
+      <p>b 的后半句「不一定帕累托最优」本身是对的，但前半句把均衡说成「回报的组合」——回报是策略组合的<b>结果</b>，不是均衡本身，所以按题面不选。这类题要盯住定义的<b>主语</b>。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">2</span><span class="qt">单项选择</span></div>
+    <div class="qb">
+      <p>在“锤子—剪刀—布”游戏中，如果你的（混合）策略是分别以 0.3、0.4 和 0.3 的概率选择“锤子”“剪刀”“布”，那么你的对手的最优策略是什么？</p>
+      <p class="opt">a) 分别以 0.3、0.4、0.3 的概率选择三个纯策略<br>b) 分别以 1/3、1/3、1/3 的概率选择三个纯策略<br>c) 以 1 的概率选择“剪刀”<br>d) 以 1 的概率选择“锤子”</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 d</span>按胜、平、负记 1、0、−1。对手选锤子的期望收益 = 0.4（锤胜剪）− 0.3（布胜锤）= 0.1；选剪刀 = 0.3 − 0.3 = 0；选布 = 0.3 − 0.4 = −0.1。所以最优反应是<b>以概率 1 出锤子</b>。</p>
+      <p>要点：一旦你的分布<b>不是</b>均匀的，对手就能用纯策略克制你。这正是「混合策略均衡必须是 (1/3, 1/3, 1/3)」的原因——只有均匀分布才让对手无差异。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">3</span><span class="qt">多项选择</span></div>
+    <div class="qb">
+      <p>如果一个静态博弈存在多个纳什均衡解，那么</p>
+      <p class="opt">a) 如果存在一个最好的均衡，博弈人会自动选择该均衡<br>b) 博弈人无法通过事先商议确定最优的均衡结果<br>c) 相当于没有纳什均衡解<br>d) 在没有其他协同机制的情况下，难以预测博弈的结果</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 d</span>多重均衡本身不能决定最终落在哪一个；即使某个均衡对所有人都更好，也未必自动实现（猎鹿博弈里就可能双双去猎兔）。</p>
+      <p>a 错在「自动」；b 错在「无法」——事前沟通恰恰可能帮助协调，只是沟通有可信度问题；c 错，多均衡仍然是均衡，只是预测力弱。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">4</span><span class="qt">多项选择</span></div>
+    <div class="qb">
+      <p>在一个双人静态博弈中，如果其中一个博弈人有一个“占优策略”，那么</p>
+      <p class="opt">a) 这个博弈人在纳什均衡中肯定采用该占优策略<br>b) 至少在一个纳什均衡中，这个博弈人采用该占优策略<br>c) 可能不存在采用该占优策略的纳什均衡<br>d) 当该策略是“强占优策略”时，该博弈人在纳什均衡中使用且仅使用该策略</p>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 b、d</span>弱占优允许打平，所以可能存在<b>另一个</b>均衡里他没采用占优策略（课件第 9 页「修改后的囚徒困境」就是：（否认，认罪）是均衡，而博弈人 1 用的正是被弱占优的「否认」）。因此 a 不一定成立、c 错误。</p>
+      <p>固定他采用占优策略，再让对手做最优反应，一定构成一个纳什均衡——所以 b 正确。若占优是<b>强</b>占优，其他策略严格更差，均衡中只能用它，d 正确。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">5</span><span class="qt">计算与证明</span></div>
+    <div class="qb">
+      <p>请找出以下博弈的所有纳什均衡。</p>
+      <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th class="c">L</th><th class="c">R</th></tr></thead>
+        <tbody>
+          <tr><td><b>U</b></td><td class="c">4, 5</td><td class="c">3, 6</td></tr>
+          <tr><td><b>D</b></td><td class="c">3, 4</td><td class="c">4, 3</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">答案 唯一均衡为双方各 1/2 混合</span>先找纯策略：列玩家选 L 时行玩家选 U（4 &gt; 3）；选 R 时行玩家选 D（4 &gt; 3）。行玩家选 U 时列玩家选 R（6 &gt; 5）；选 D 时列玩家选 L（4 &gt; 3）。两条最优反应始终错开，<b>没有纯策略均衡</b>。</p>
+      <p>设行玩家以概率 p 选 U、列玩家以概率 q 选 L。行玩家无差异：4q + 3(1−q) = 3q + 4(1−q) ⇒ q = 1/2。列玩家无差异：5p + 4(1−p) = 6p + 3(1−p) ⇒ p = 1/2。故均衡为 ((1/2, 1/2), (1/2, 1/2))。</p>
+      <p>期望回报：行玩家 4×½×½ + 3×½×½ + 3×½×½ + 4×½×½ = <b>7/2</b>；列玩家 5×¼ + 6×¼ + 4×¼ + 3×¼ = <b>9/2</b>。</p>
+    </div></details>
+  </div>
+
+  <div class="qcard">
+    <div class="qh"><span class="qn">6</span><span class="qt">计算与证明</span></div>
+    <div class="qb">
+      <p>课件中提出，以下博弈有一个基于红、黄、蓝三色等概率信号灯的“相关均衡”。请给出证明。</p>
+      <div class="tbl-wrap">
+      <table>
+        <thead><tr><th></th><th class="c">L</th><th class="c">R</th></tr></thead>
+        <tbody>
+          <tr><td><b>U</b></td><td class="c">5, 1</td><td class="c">0, 0</td></tr>
+          <tr><td><b>D</b></td><td class="c">4, 4</td><td class="c">1, 5</td></tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+    <details class="ansd"><summary>查看答案与解析</summary><div class="ans">
+      <p><span class="atag">思路 构造联合分布 + 逐条检验无偏离</span>设信号以各 1/3 的概率取红、黄、蓝，建议规则为：红 →（U, L），黄 →（D, L），蓝 →（D, R）；即 μ(U,L) = μ(D,L) = μ(D,R) = 1/3，μ(U,R) = 0。博弈人只知道自己的建议。</p>
+      <p>逐条检验：</p>
+      <ul>
+        <li><b>行玩家收到 U</b>：必是红灯，列玩家收到 L。遵得 5，改选 D 得 4，不偏离。</li>
+        <li><b>行玩家收到 D</b>：可能是黄或蓝（各 1/2），列玩家相应收到 L 或 R。遵得 (4+1)/2 = 5/2，改选 U 得 (5+0)/2 = 5/2，<b>无差异</b>，不严格偏离。</li>
+        <li><b>列玩家收到 L</b>：可能是红或黄（各 1/2），行玩家相应收到 U 或 D。遵得 (1+4)/2 = 5/2，改选 R 得 (0+5)/2 = 5/2，无差异。</li>
+        <li><b>列玩家收到 R</b>：必是蓝灯，行玩家收到 D。遵得 5，改选 L 得 4，不偏离。</li>
+      </ul>
+      <p>每条建议下都不存在有利的单方面偏离（随机混合偏离也无益），故构成相关均衡。事前期望回报 = (5+4+1)/3 = <b>10/3</b>，高于混合策略均衡的 2.5，也高于「扔硬币选纯策略均衡」的 3。</p>
+      <p>要点：相关均衡的关键不是「建议一定被遵从」，而是「<b>没有人在收到建议后想改</b>」。证明题必须逐条检验，只算期望回报是不够的。</p>
+    </div></details>
+  </div>
+
 </section>
 
 
@@ -4619,6 +5366,12 @@ details p,details ul{font-size:14px}
       <tr><td><b>负外部性最优</b></td><td>Q<sup>D</sup>(P) = Q<sup>S</sup>(P − MD)</td><td>MD = 边际损害</td></tr>
       <tr><td><b>正外部性最优</b></td><td>Q<sup>D</sup>(P − MB) = Q<sup>S</sup>(P)</td><td>MB = 边际外部收益</td></tr>
       <tr><td><b>公共产品需求</b></td><td>P<sub>社会</sub>(Q) = Σ P<sub>i</sub>(Q)</td><td>纵向加总</td></tr>
+      <tr><td><b>混合策略均衡</b></td><td>支撑内各纯策略的期望回报相等</td><td>据此解出对手的概率</td></tr>
+      <tr><td><b>监督博弈</b></td><td>p* = e/w，q* = m/w</td><td>检查概率由努力成本定，怠工率由监督成本定</td></tr>
+      <tr><td><b>二价拍卖</b></td><td>s<sub>i</sub> = v<sub>i</sub>（弱占优）</td><td>按第二高价成交</td></tr>
+      <tr><td><b>古诺反应函数</b></td><td>q<sub>i</sub> = (a − c)/2b − q<sub>j</sub>/2</td><td>本例 P = 120 − Q、c = 0 ⇒ 60 − q<sub>j</sub>/2</td></tr>
+      <tr><td><b>斯塔克尔伯格</b></td><td>q<sub>L</sub> = (a − c)/2b，q<sub>F</sub> = (a − c)/4b</td><td>领导者产量是古诺的 1.5 倍</td></tr>
+      <tr><td><b>劳动需求</b></td><td>W = P × MPL ≡ VMPL</td><td>VMPL 曲线即劳动需求曲线</td></tr>
     </tbody>
   </table>
   </div>
@@ -4681,7 +5434,7 @@ details p,details ul{font-size:14px}
       <tr><td>图 8-4</td><td>p6</td><td>消费的负外部性</td></tr>
       <tr><td>图 8-5</td><td>p7</td><td>消费的正外部性</td></tr>
       <tr><td>图 8-6</td><td>p8</td><td>正外部性算例</td></tr>
-      <tr><td>图 9-1</td><td>第 9 讲 p5</td><td>公共产品的边际价值与纵向加总</td></tr></tr>
+      <tr><td>图 9-1</td><td>第 9 讲 p5</td><td>公共产品的边际价值与纵向加总</td></tr>
       <tr><td>图 10-1</td><td>p6—7</td><td>生产函数与总成本曲线</td></tr>
       <tr><td>图 10-2</td><td>p8—10</td><td>短期成本曲线族（MC/ATC/AVC/AFC）</td></tr>
       <tr><td>图 10-3</td><td>p12</td><td>短期与长期平均总成本（包络）</td></tr>
@@ -4694,6 +5447,13 @@ details p,details ul{font-size:14px}
       <tr><td>图 12-2</td><td>p8</td><td>垄断的无谓损失</td></tr>
       <tr><td>图 12-3</td><td>p15</td><td>垄断竞争长期均衡（切点）</td></tr>
       <tr><td>图 12-4</td><td>p16</td><td>垄断竞争 vs 完全竞争长期对比</td></tr>
+      <tr><td>图 13-1</td><td>第 13 讲 p11</td><td>监督博弈的混合策略均衡</td></tr>
+      <tr><td>图 14-1</td><td>第 14 讲 p6</td><td>不可置信的威胁（扩展式博弈树）</td></tr>
+      <tr><td>图 14-2</td><td>p12</td><td>二价拍卖：出价等估值为弱占优</td></tr>
+      <tr><td>图 15-1</td><td>第 15 讲 p6—8</td><td>古诺反应曲线与斯塔克尔伯格点</td></tr>
+      <tr><td>图 15-2</td><td>p12</td><td>寡头的无谓损失介于垄断与竞争之间</td></tr>
+      <tr><td>图 16-1</td><td>第 16 讲 p4—6</td><td>VMPL 与最优雇佣量</td></tr>
+      <tr><td>图 16-2</td><td>p10—11</td><td>劳动市场均衡与供给移动</td></tr>
     </tbody>
   </table>
   </div>
@@ -4712,6 +5472,10 @@ details p,details ul{font-size:14px}
       <tr><td><b>帕累托有效 / 总福利最大</b></td><td>前者是「无法让所有人更好」，后者是潜在帕累托标准（允许补偿）。</td></tr>
       <tr><td><b>沉没成本 / 机会成本</b></td><td>前者已发生不可回收，不影响决策；后者是放弃的次优选择，必须进入决策。</td></tr>
       <tr><td><b>正外部性 / 负外部性</b></td><td>正 → 市场产量过少；负 → 市场产量过多。方向不要记反。</td></tr>
+      <tr><td><b>纳什均衡 / 子博弈完美</b></td><td>前者只要求「无人单方面改变」；后者还要求每个节点上都最优，故后者一定是前者，反之不然。</td></tr>
+      <tr><td><b>占优策略 / 纳什均衡策略</b></td><td>前者对<b>所有</b>对手策略都最优；后者只对<b>均衡路径上</b>的对手策略最优。强占优必在均衡中，弱占优未必。</td></tr>
+      <tr><td><b>古诺 / 伯特兰</b></td><td>比产量：价格高于 MC、有正利润；比价格：同质时 P = MC、利润为零。产能约束是两者的开关。</td></tr>
+      <tr><td><b>古诺 / 斯塔克尔伯格</b></td><td>同时定产 vs 先后定产；后者领导者产量更大、总产量更高、价格更低（先动优势）。</td></tr>
     </tbody>
   </table>
   </div>
@@ -4731,6 +5495,18 @@ details p,details ul{font-size:14px}
 
   <div class="log">
     <div class="day new">
+      <div class="d">2026-11-17<small>新增第 13—16 讲与作业 6</small></div>
+      <ul>
+        <li><b>新增第 13 讲「博弈论基础（一）」。</b>依据《Principles 13 博弈论1》（13 页）：博弈三要素与回报矩阵、纯策略与混合策略、纳什均衡与强纳什均衡、占优策略与囚徒困境、混合策略均衡的求法（监督博弈 p = e/w、q = m/w）、猎鹿与性别之战、胆小鬼。<b>图 13-1</b> 为新增。</li>
+        <li><b>新增第 14 讲「博弈论基础（二）」。</b>依据《Principles 14 博弈论2》（14 页）：相关均衡与三色信号灯（期望回报 10/3）、信息结构与「知道太多不一定有利」、子博弈完美与逆向归纳、重复博弈与正向归纳、二价拍卖的弱占优论证、完美贝叶斯均衡与信号。<b>图 14-1、14-2</b> 为新增。</li>
+        <li><b>新增第 15 讲「寡头」。</b>依据《Principles 15 寡头》（15 页）：卡特尔、古诺（40, 40）、斯塔克尔伯格（60, 30）、伯特兰悖论、寡头的福利位置与 DWL、合并的外部性、卡特尔的不稳定性与默契合谋的六个因素、反垄断类型。<b>图 15-1、15-2</b> 为新增。</li>
+        <li><b>新增第 16 讲「劳动力市场」。</b>依据《Principles 16 劳动力市场》（13 页）：派生需求、VMPL 与最优雇佣量（W = P × MPL）、需求移动的三个来源、闲暇—工作模型与两种效应、移民的四个经验事实、六类工资差异。<b>图 16-1、16-2</b> 为新增。</li>
+        <li><b>新增作业 6 原题与解析</b>（4 道多选 + 2 道计算与证明），按官方参考答案核对；第 4 题「弱占优策略仍可能出现在均衡中」与第 6 题相关均衡的逐条检验是本次重点。</li>
+        <li><b>同步修订的旧内容</b>：封面与页脚的讲次、图示数、作业范围（12 讲 / 66 图 / 作业 1—5 → 16 讲 / 73 图 / 作业 1—6）；声明中的参考资料页数（144 页 → 250 页）。正文前十二讲未作改动。</li>
+      </ul>
+    </div>
+
+    <div class="day">
       <div class="d">2026-11-01<small>新增后三讲与真题</small></div>
       <ul>
         <li><b>新增第 10—12 讲。</b>生产成本、完全竞争、垄断与垄断竞争，按课件 51 页逐节整理，新增 12 张图示（成本曲线族、长期包络、供给横向加总、垄断定价与无谓损失、垄断竞争切点均衡与过剩产能）。</li>
@@ -4777,7 +5553,7 @@ details p,details ul{font-size:14px}
 </section>
 
 <footer style="margin-top:64px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:#9a9284">
-  经济学原理 · 课程笔记　|　按 2026 秋 12 讲课件（195 页）、作业 1—5 与两份期中真题整理　|　按 <b>Ctrl/Cmd + P</b> 可导出 PDF　|　本资料仅限北京大学学生复习使用　|　最近更新 2026-11-01　|　<a href="#chg" style="color:#9c3d27;text-decoration:none">修改日志</a>
+  经济学原理 · 课程笔记　|　按 2026 秋 16 讲课件（250 页）、作业 1—6 与两份期中真题整理　|　按 <b>Ctrl/Cmd + P</b> 可导出 PDF　|　本资料仅限北京大学学生复习使用　|　最近更新 2026-11-17　|　<a href="#chg" style="color:#9c3d27;text-decoration:none">修改日志</a>
 </footer>
 
 </div>
